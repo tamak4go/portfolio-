@@ -33,13 +33,13 @@ export interface WritingItem {
 export const PORTFOLIO = {
   initials: "TQT",
   name: "Trịnh Quang Tâm",
-  role: "AI-Native Full-Stack Developer",
+  role: "Full-Stack Web Developer",
   roleTagline: "React, Next.js & Node.js",
   status: "Available for internships & junior roles",
   avatarText: "TQT",
   avatarUrl: "/avatar.jpg",
 
-  bio: "Final-year Information Technology student at FPT University and a full-stack developer building end-to-end products with React, Next.js, Node.js and MySQL. I work in an AI-Native way — using Claude and Antigravity throughout the dev lifecycle to design, code, test, and ship faster.",
+  bio: "Final-year Information Technology student at FPT University and a full-stack web developer building end-to-end products with React, Next.js, Node.js, MySQL and MongoDB. I designed, built, and deployed my graduation project, TMPMS, solo — from requirements analysis and database design to API development and UI implementation.",
 
   socials: {
     github: "https://github.com/tamak4go",
@@ -64,7 +64,7 @@ export const PORTFOLIO = {
       year: "2026",
       status: "live",
       description:
-        "Graduation project for FPT University — an end-to-end system I designed, built, and deployed solo: frontend, backend, database, and production hosting. Built with an AI-Native workflow using Claude and Antigravity to move faster through architecture, code generation, refactoring, and testing.",
+        "Graduation project for FPT University — a full-stack system I designed and built solo: React/Next.js/Vue.js frontend, a Node.js backend with RESTful APIs, and MySQL/MongoDB databases. Covered the full cycle from requirements analysis and database design to API development, UI implementation, and production deployment.",
       tech: ["React", "Next.js", "Node.js", "MySQL", "MongoDB"],
       thumbnail: "",
       liveUrl: "https://tmpms.io.vn/",
@@ -83,7 +83,7 @@ export const PORTFOLIO = {
   technologies: [
     ["React", "Next.js", "Vue.js", "JavaScript", "HTML/CSS"],
     ["Node.js", "Java", "MySQL", "MongoDB"],
-    ["Git", "GitHub", "Claude", "Antigravity", "Agile/Scrum"],
+    ["Git", "GitHub", "REST API", "Postman", "Agile/Scrum"],
   ],
 
   experience: [
@@ -116,14 +116,14 @@ export const PORTFOLIO = {
 
   contact: {
     blurb:
-      "Final-year IT student open to internships and junior full-stack roles — especially teams building with AI-native workflows.",
+      "Final-year IT student open to internships and junior full-stack web developer roles.",
     phone: "+84 862 544 627",
   },
 
   chat: {
     enabled: true,
     botName: "Tam",
-    greeting: "Hey! I'm Tam — ask me about TMPMS, my stack, or how I use AI-native workflows to build.",
+    greeting: "Hey! I'm Tam — ask me about TMPMS, my stack, or anything else on this site.",
   },
 };
 
@@ -140,7 +140,7 @@ export const BRAND_COLORS: Record<string, string> = {
   mongodb: "#47A248",
   git: "#F05032",
   github: "#ffffff",
-  claude: "#DE7356",
-  antigravity: "#8B5CF6",
-  "agile/scrum": "#0EA5E9",
+  "rest api": "#0EA5E9",
+  postman: "#FF6C37",
+  "agile/scrum": "#22C55E",
 };
