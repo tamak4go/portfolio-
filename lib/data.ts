@@ -37,7 +37,7 @@ export const PORTFOLIO = {
   roleTagline: "React, Next.js & Node.js",
   status: "Available for internships & junior roles",
   avatarText: "TQT",
-  avatarUrl: "", // drop a photo into public/avatar.jpg and set this to "/avatar.jpg" to use it
+  avatarUrl: "/avatar.jpg",
 
   bio: "Final-year Information Technology student at FPT University and a full-stack developer building end-to-end products with React, Next.js, Node.js and MySQL. I work in an AI-Native way — using Claude and Antigravity throughout the dev lifecycle to design, code, test, and ship faster.",
 
