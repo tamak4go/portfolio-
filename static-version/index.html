@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio</title>
+<meta name="description" content="Personal developer portfolio." />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo" id="logoMark">RN</a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#events">Events</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">&#9728;</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section class="hero" id="hero">
+    <div class="hero-top">
+      <div class="avatar" id="avatar"></div>
+      <div>
+        <div class="hero-name-row">
+          <h1 class="hero-name" id="heroName"></h1>
+          <span class="verified" id="verifiedBadge" title="Verified">&#10003;</span>
+        </div>
+        <div class="social-row" id="socialRow"></div>
+      </div>
+    </div>
+
+    <h2 class="hero-role" id="heroRole"></h2>
+    <p class="hero-bio" id="heroBio"></p>
+    <a class="btn" id="resumeBtn" href="#">View Resume &rarr;</a>
+  </section>
+
+  <section class="section-featured">
+    <div class="featured-card">
+      <div class="featured-thumb" id="featuredThumb"></div>
+      <div class="featured-body">
+        <span class="eyebrow" id="featuredLabel"></span>
+        <h3 id="featuredTitle"></h3>
+        <p id="featuredDesc"></p>
+        <div class="tech-row" id="featuredTech"></div>
+        <a class="btn btn-outline" id="featuredLink" href="#">Read case study &#8599;</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head">
+      <h2>Projects</h2>
+    </div>
+    <div class="projects-grid" id="projectsGrid"></div>
+    <div class="view-all-wrap">
+      <a class="btn btn-outline" href="#projects">View all Projects &rarr;</a>
+    </div>
+  </section>
+
+  <section id="technologies">
+    <div class="section-head">
+      <h2>Technologies</h2>
+      <a href="#" id="techViewAll">View All &rsaquo;</a>
+    </div>
+    <div class="tech-marquee-wrap" id="techMarquee"></div>
+  </section>
+
+  <section id="experience">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <a href="#" id="experienceViewDetails">View Details &rsaquo;</a>
+    </div>
+    <div id="experienceList"></div>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><h2>Education</h2></div>
+    <div id="educationList"></div>
+  </section>
+
+  <section id="events">
+    <div class="section-head">
+      <h2>Certifications</h2>
+      <a href="#" id="certsViewAll">View All &rsaquo;</a>
+    </div>
+    <div id="eventsList"></div>
+  </section>
+
+  <section id="outside">
+    <div class="section-head"><h2>Outside the IDE</h2></div>
+    <div class="outside-wrap">
+      <div>
+        <p class="outside-blurb" id="outsideBlurb"></p>
+        <div class="tag-row" id="outsideTags"></div>
+      </div>
+      <div class="outside-photo" id="outsidePhoto"></div>
+    </div>
+  </section>
+
+  <section id="github">
+    <div class="section-head"><h2>GitHub Activity</h2></div>
+    <div class="gh-card">
+      <img id="ghChart" alt="GitHub contribution graph" loading="lazy" />
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head"><h2>Let's work together</h2></div>
+    <p class="hero-bio" id="contactBlurb"></p>
+    <div class="contact-grid">
+      <a class="contact-card" id="emailCard" href="#">
+        <div>
+          <div class="label">Email</div>
+          <div class="value" id="emailValue"></div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="contact-card" id="scheduleCard" href="#" target="_blank" rel="noopener">
+        <div>
+          <div class="label" id="scheduleLabel">Let's talk</div>
+          <div class="value" id="scheduleValue">Schedule a Call</div>
+        </div>
+        <span class="arrow">&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <footer id="footerText"></footer>
+</main>
+
+<!-- Chat widget -->
+<button class="chat-fab" id="chatFab">&#128172; <span id="chatFabLabel">Chat</span></button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+    <div class="chat-header-title">
+      <div class="chat-avatar" id="chatAvatar"></div>
+      <div>
+        <h4 id="chatTitle">Chat</h4>
+        <div class="status">Online</div>
+      </div>
+    </div>
+    <button class="chat-close" id="chatClose">&times;</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
+    <button class="chat-send" id="chatSend">&#10148;</button>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 255 255 255;
+  --bg-elevated: 255 255 255;
+  --fg: 10 10 10;
+  --fg-muted: 82 82 82;
+  --border: 228 228 228;
+}
+
+.dark {
+  --bg: 10 10 10;
+  --bg-elevated: 17 17 17;
+  --fg: 245 245 245;
+  --fg-muted: 163 163 163;
+  --border: 255 255 255;
+}
+
+* {
+  border-color: rgb(var(--border) / 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+}
+
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 3rem, black calc(100% - 3rem), transparent);
+  mask-image: linear-gradient(to right, transparent, black 3rem, black calc(100% - 3rem), transparent);
+}
+
+::selection {
+  background: rgb(var(--fg) / 0.15);
+}
