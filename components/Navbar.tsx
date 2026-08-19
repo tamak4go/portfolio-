@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { Avatar } from "./Avatar";
 import { PORTFOLIO } from "@/lib/data";
 
 export function Navbar() {
@@ -28,7 +29,8 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
-        <a href="#" className="text-sm font-bold tracking-tight">
+        <a href="#" className="flex items-center gap-2 text-sm font-bold tracking-tight">
+          <Avatar size={24} />
           {PORTFOLIO.initials}
         </a>
         <div className="flex items-center gap-6 text-sm">

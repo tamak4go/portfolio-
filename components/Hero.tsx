@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Twitter, ArrowRight } from "lucide-react";
 import { PORTFOLIO } from "@/lib/data";
+import { Avatar } from "./Avatar";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 14 },
@@ -21,19 +22,21 @@ export function Hero() {
 
   return (
     <section id="about" className="pt-20 pb-4 sm:pt-28">
-      <motion.div {...fadeUp(0)} className="flex items-center gap-2 text-xs font-medium text-emerald-500">
-        <span className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-        </span>
-        {PORTFOLIO.status}
+      <motion.div {...fadeUp(0)} className="flex items-start gap-4">
+        <Avatar size={64} />
+        <div className="pt-1">
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{PORTFOLIO.name}</h1>
+          <div className="mt-2 flex items-center gap-2 text-xs font-medium text-emerald-500">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            {PORTFOLIO.status}
+          </div>
+        </div>
       </motion.div>
 
-      <motion.h1 {...fadeUp(0.08)} className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
-        {PORTFOLIO.name}
-      </motion.h1>
-
-      <motion.p {...fadeUp(0.14)} className="mt-2 text-lg text-neutral-500 dark:text-neutral-400">
+      <motion.p {...fadeUp(0.14)} className="mt-5 text-lg text-neutral-500 dark:text-neutral-400">
         {PORTFOLIO.role} <span className="text-neutral-400 dark:text-neutral-600">— {PORTFOLIO.roleTagline}</span>
       </motion.p>
 
