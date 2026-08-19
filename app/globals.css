@@ -39,3 +39,73 @@ body {
 ::selection {
   background: rgb(var(--fg) / 0.15);
 }
+
+/* ---- Cyber avatar ring + glow ---- */
+.avatar-ring::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 9999px;
+  padding: 2px;
+  background: conic-gradient(from 0deg, #00f0ff, #ff0055, #7c3aed, #00f0ff);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.7;
+  animation: avatar-ring-spin 7s linear infinite;
+}
+.avatar-ring::after {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  z-index: -1;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgb(0 240 255 / 0.28), transparent 70%);
+  filter: blur(8px);
+}
+@keyframes avatar-ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---- Avatar glitch / chromatic-aberration on hover ---- */
+.avatar-glitch img {
+  transition: filter 0.15s ease;
+}
+.avatar-fancy:hover img,
+.avatar-fancy:hover .avatar-fallback {
+  animation: avatar-glitch-anim 0.5s steps(2, jump-none) infinite;
+}
+@keyframes avatar-glitch-anim {
+  0%, 100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0, 0);
+    filter: drop-shadow(2px 0 0 #00f0ff) drop-shadow(-2px 0 0 #ff0055);
+  }
+  20% { clip-path: inset(8% 0 62% 0); transform: translate(-2px, 0); }
+  40% { clip-path: inset(62% 0 8% 0); transform: translate(2px, 0); }
+  60% { clip-path: inset(30% 0 40% 0); transform: translate(-1px, 0); }
+  80% { clip-path: inset(0 0 0 0); transform: translate(1px, 0); }
+}
+
+/* ---- Name glitch / RGB-split on hover ---- */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+.glitch-text:hover {
+  animation: text-glitch-anim 0.4s steps(2, jump-none) infinite;
+}
+@keyframes text-glitch-anim {
+  0%, 100% { text-shadow: 2px 0 #00f0ff, -2px 0 #ff0055; transform: translate(0, 0); }
+  50% { text-shadow: -2px 0 #00f0ff, 2px 0 #ff0055; transform: translate(0.5px, 0); }
+}
+
+/* Rapid flicker effects are seizure/vestibular-sensitive even though the
+   ambient ring spin above isn't — respect reduced-motion for these only. */
+@media (prefers-reduced-motion: reduce) {
+  .avatar-fancy:hover img,
+  .avatar-fancy:hover .avatar-fallback,
+  .glitch-text:hover {
+    animation: none !important;
+  }
+}

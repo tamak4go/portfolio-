@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, ArrowRight, BadgeCheck } from "lucide-react";
 import { PORTFOLIO } from "@/lib/data";
 import { Avatar } from "./Avatar";
 
@@ -22,49 +22,57 @@ export function Hero() {
 
   return (
     <section id="about" className="pt-20 pb-4 sm:pt-28">
-      <motion.div {...fadeUp(0)} className="flex items-start gap-4">
-        <Avatar size={64} />
-        <div className="pt-1">
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{PORTFOLIO.name}</h1>
-          <div className="mt-2 flex items-center gap-2 text-xs font-medium text-emerald-500">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            {PORTFOLIO.status}
+      <motion.div {...fadeUp(0)} className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:text-left">
+        <Avatar size={96} fancy />
+
+        <div>
+          <h1 className="glitch-text cursor-default text-3xl font-semibold tracking-tight sm:text-4xl">
+            {PORTFOLIO.name}
+            <BadgeCheck size={20} className="ml-1.5 inline-block align-middle fill-sky-500 text-white dark:text-neutral-950" />
+          </h1>
+          <div className="mt-3 flex items-center justify-center gap-1.5 sm:justify-start">
+            {links.map(({ href, icon: Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener"
+                aria-label={label}
+                className="flex h-8 w-8 items-center justify-center rounded-lg text-neutral-400 transition-all duration-200 hover:scale-110 hover:text-neutral-900 dark:hover:text-white"
+              >
+                <Icon size={16} />
+              </a>
+            ))}
           </div>
         </div>
       </motion.div>
 
-      <motion.p {...fadeUp(0.14)} className="mt-5 text-lg text-neutral-500 dark:text-neutral-400">
+      <motion.div
+        {...fadeUp(0.1)}
+        className="mt-6 flex items-center justify-center gap-2 text-xs font-medium text-emerald-500 sm:justify-start"
+      >
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+        </span>
+        {PORTFOLIO.status}
+      </motion.div>
+
+      <motion.p {...fadeUp(0.16)} className="mt-3 text-center text-lg text-neutral-500 dark:text-neutral-400 sm:text-left">
         {PORTFOLIO.role} <span className="text-neutral-400 dark:text-neutral-600">— {PORTFOLIO.roleTagline}</span>
       </motion.p>
 
-      <motion.p {...fadeUp(0.2)} className="mt-5 max-w-xl text-[15px] leading-relaxed text-neutral-500 dark:text-neutral-400">
+      <motion.p {...fadeUp(0.22)} className="mx-auto mt-5 max-w-xl text-center text-[15px] leading-relaxed text-neutral-500 dark:text-neutral-400 sm:mx-0 sm:text-left">
         {PORTFOLIO.bio}
       </motion.p>
 
-      <motion.div {...fadeUp(0.26)} className="mt-6 flex items-center gap-3">
+      <motion.div {...fadeUp(0.28)} className="mt-6 flex items-center justify-center sm:justify-start">
         <a
           href={PORTFOLIO.resumeUrl}
           className="inline-flex items-center gap-1.5 rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-85 dark:bg-white dark:text-neutral-900"
         >
           View Resume <ArrowRight size={14} />
         </a>
-        <div className="flex items-center gap-1.5">
-          {links.map(({ href, icon: Icon, label }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel="noopener"
-              aria-label={label}
-              className="flex h-9 w-9 items-center justify-center rounded-lg border border-black/10 text-neutral-500 transition-colors hover:border-black/20 hover:text-neutral-900 dark:border-white/10 dark:hover:border-white/20 dark:hover:text-white"
-            >
-              <Icon size={15} />
-            </a>
-          ))}
-        </div>
       </motion.div>
     </section>
   );
