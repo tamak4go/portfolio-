@@ -10,6 +10,7 @@ import { PORTFOLIO } from "@/lib/data";
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navItems = PORTFOLIO.nav.filter((item) => item.href !== "#writing" || PORTFOLIO.writing.length > 0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -34,7 +35,7 @@ export function Navbar() {
           {PORTFOLIO.initials}
         </a>
         <div className="flex items-center gap-6 text-sm">
-          {PORTFOLIO.nav.map((item) => (
+          {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -66,7 +67,7 @@ export function Navbar() {
             className="overflow-hidden border-t border-black/10 dark:border-white/10 sm:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-3">
-              {PORTFOLIO.nav.map((item) => (
+              {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
