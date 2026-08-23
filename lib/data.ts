@@ -43,7 +43,7 @@ export const PORTFOLIO = {
 
   socials: {
     github: "https://github.com/tamak4go",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/tâm-trịnh-70b052381",
     twitter: "",
     email: "ng.tammail@gmail.com",
   },
