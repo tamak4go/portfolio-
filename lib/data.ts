@@ -40,6 +40,18 @@ export interface WritingItem {
   url: string;
 }
 
+export interface EventItem {
+  date: string;
+  title: string;
+  issuer: string;
+}
+
+export interface OutsideData {
+  blurb: string;
+  tags: string[];
+  photo?: string;
+}
+
 export const PORTFOLIO = {
   initials: "TQT",
   name: "Trịnh Quang Tâm",
@@ -64,11 +76,9 @@ export const PORTFOLIO = {
   resumeUrl: "/resume.pdf",
 
   nav: [
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Experience", href: "#experience" },
-    { label: "Writing", href: "#writing" },
-    { label: "Contact", href: "#contact" },
+    { label: "Projects", href: "/projects" },
+    { label: "Experience", href: "/experience" },
+    { label: "Events", href: "/events" },
   ],
 
   featured: {
@@ -78,7 +88,7 @@ export const PORTFOLIO = {
       "A full-stack system I designed and built solo, from database schema to deployment.",
     tech: ["React", "Next.js", "Node.js", "MySQL", "MongoDB"],
     thumbnail: "/projects/tmpms.gif",
-    caseStudyUrl: "https://tmpms.io.vn/",
+    caseStudyUrl: "/projects/tmpms",
   } satisfies FeaturedProject,
 
   projects: [
@@ -148,6 +158,35 @@ export const PORTFOLIO = {
 
   // Add real posts here to populate the Writing section — leave empty to hide it.
   writing: [] as WritingItem[],
+
+  events: [
+    {
+      date: "May 2026",
+      title: "Google Antigravity IDE Hackathon Certificate",
+      issuer: "Google Developers",
+    },
+    {
+      date: "Dec 2025",
+      title: "Information Technology Student of the Year (Nominee)",
+      issuer: "FPT University Đà Nẵng",
+    },
+    {
+      date: "Oct 2025",
+      title: "Java SE 11 Developer Certification",
+      issuer: "Oracle",
+    },
+    {
+      date: "Jul 2025",
+      title: "Responsive Web Design Certification",
+      issuer: "freeCodeCamp",
+    },
+  ] satisfies EventItem[],
+
+  outside: {
+    blurb: "When I step away from the screen, I recharge through {{tags}} — it keeps my work fresh and my head clear.",
+    tags: ["traveling", "photography", "football", "gaming"],
+    photo: "/avatars/avatar-fade.jpg",
+  } satisfies OutsideData,
 
   githubUsername: "tamak4go",
 

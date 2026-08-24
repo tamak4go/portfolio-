@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { Avatar } from "./Avatar";
 import { PORTFOLIO } from "@/lib/data";
+import Link from "next/link";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,19 +31,19 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-2 text-sm font-bold tracking-tight">
+        <Link href="/" className="flex items-center gap-2 text-sm font-bold tracking-tight">
           <Avatar size={24} />
           {PORTFOLIO.initials}
-        </a>
+        </Link>
         <div className="flex items-center gap-6 text-sm">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="hidden text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-white sm:inline"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <div className="flex items-center gap-2 border-l border-black/10 pl-4 dark:border-white/10">
             <ThemeToggle />
@@ -68,14 +69,14 @@ export function Navbar() {
           >
             <div className="flex flex-col gap-1 px-6 py-3">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
                   className="rounded-lg px-2 py-2 text-sm text-neutral-500 hover:bg-black/5 hover:text-neutral-900 dark:hover:bg-white/5 dark:hover:text-white"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>

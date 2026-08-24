@@ -1,11 +1,17 @@
 import { PORTFOLIO } from "@/lib/data";
 import { Reveal } from "./Reveal";
+import Link from "next/link";
 
 export function Experience() {
   return (
     <section id="experience" className="border-t border-black/10 py-14 dark:border-white/10">
       <Reveal>
-        <h2 className="mb-6 text-xl font-semibold tracking-tight">Experience</h2>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-semibold tracking-tight">Experience</h2>
+          <Link href="/experience" className="text-xs font-semibold text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
+            View Details &rsaquo;
+          </Link>
+        </div>
         <div className="flex flex-col">
           {PORTFOLIO.experience.map((e, i) => (
             <div

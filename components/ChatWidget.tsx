@@ -14,19 +14,19 @@ interface Msg {
 // `reply()` for a real API call when you're ready to wire up a live model.
 function reply(msg: string): string {
   const m = msg.toLowerCase();
-  if (m.includes("project")) {
-    return `My main project right now is ${PORTFOLIO.projects.map((p) => p.title).join(", ")}. Check out the Projects section above for details.`;
+  if (m.includes("project") || m.includes("work")) {
+    return `My main graduation project is TMPMS (Topic Management & Project Monitoring System). I also developed Tracking Phượt, which extracts GPS route data from trip photos. Check out my /projects page or /projects/tmpms case study for more details!`;
   }
-  if (m.includes("stack") || m.includes("tech")) {
-    return `I mostly work with ${PORTFOLIO.technologies[0].join(", ")}, among other tools.`;
+  if (m.includes("stack") || m.includes("tech") || m.includes("language") || m.includes("use")) {
+    return `I work across the full stack with React, Next.js, Vue.js, Node.js, Express, MySQL, and MongoDB. I also have Java experience from my internship at FPT Software.`;
   }
-  if (m.includes("hire") || m.includes("work") || m.includes("contact")) {
-    return `${PORTFOLIO.contact.blurb} You can reach me at ${PORTFOLIO.socials.email}.`;
+  if (m.includes("hire") || m.includes("job") || m.includes("internship") || m.includes("contact") || m.includes("email")) {
+    return `I am available for internships and junior full-stack developer roles! You can contact me at ng.tammail@gmail.com or call me at +84 862 544 627.`;
   }
   if (m.includes("resume") || m.includes("cv")) {
-    return `You can view my resume using the "View Resume" button near the top of the page.`;
+    return `You can view my resume using the "View Resume" button on the homepage, or access it directly at /resume.pdf.`;
   }
-  return `Thanks for the message! I'm a simple demo assistant for now — wire me up to a real API in components/ChatWidget.tsx to make me smarter.`;
+  return `Hi! I'm Tam's AI assistant. Ask me about my graduation project (TMPMS), my stack, my internship at FPT Software, or my contact info!`;
 }
 
 export function ChatWidget() {
@@ -85,17 +85,30 @@ export function ChatWidget() {
               </button>
             </div>
 
-            <div className="flex-1 space-y-2.5 overflow-y-auto p-4">
+            <div className="flex-1 space-y-3.5 overflow-y-auto p-4 flex flex-col">
               {messages.map((m, i) => (
                 <div
                   key={i}
-                  className={`max-w-[82%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${
-                    m.who === "bot"
-                      ? "self-start rounded-bl-sm bg-black/5 dark:bg-white/10"
-                      : "ml-auto self-end rounded-br-sm bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
+                  className={`flex items-start gap-2 max-w-[85%] ${
+                    m.who === "bot" ? "self-start" : "ml-auto flex-row-reverse"
                   }`}
                 >
-                  {m.text}
+                  <div className="h-6 w-6 shrink-0 overflow-hidden rounded-full border border-black/10 bg-neutral-100 dark:border-white/10 dark:bg-neutral-800 flex items-center justify-center text-xs">
+                    {m.who === "bot" ? (
+                      <span className="font-bold text-[9px]">{PORTFOLIO.initials}</span>
+                    ) : (
+                      <span className="text-[10px]">👤</span>
+                    )}
+                  </div>
+                  <div
+                    className={`rounded-2xl px-3 py-2 text-sm leading-relaxed ${
+                      m.who === "bot"
+                        ? "rounded-bl-sm bg-black/5 dark:bg-white/10"
+                        : "rounded-br-sm bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
+                    }`}
+                  >
+                    {m.text}
+                  </div>
                 </div>
               ))}
             </div>

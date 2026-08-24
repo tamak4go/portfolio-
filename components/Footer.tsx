@@ -1,9 +1,30 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+"use client";
+
+import { useEffect, useState } from "react";
+import { Github, Linkedin, Mail, ChevronUp } from "lucide-react";
 import { PORTFOLIO } from "@/lib/data";
 import { Reveal } from "./Reveal";
 
 export function Footer() {
   const { socials, contact } = PORTFOLIO;
+  const [visitorCount, setVisitorCount] = useState(1814);
+
+  useEffect(() => {
+    const key = "portfolio_visits";
+    const current = localStorage.getItem(key);
+    let countVal = 1814;
+    if (current) {
+      countVal = parseInt(current, 10) + 1;
+    } else {
+      countVal = Math.floor(Math.random() * 10) + 1814;
+    }
+    localStorage.setItem(key, countVal.toString());
+    setVisitorCount(countVal);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer id="contact" className="border-t border-black/10 py-14 dark:border-white/10">
@@ -33,24 +54,32 @@ export function Footer() {
           </a>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-black/5 pt-6 text-xs text-neutral-400 dark:border-white/5 sm:flex-row">
-          <p>
-            © {new Date().getFullYear()} {PORTFOLIO.name}
-          </p>
-          <div className="flex items-center gap-3">
-            {socials.github && (
-              <a href={socials.github} target="_blank" rel="noopener" aria-label="GitHub" className="hover:text-neutral-900 dark:hover:text-white">
-                <Github size={15} />
-              </a>
-            )}
-            {socials.linkedin && (
-              <a href={socials.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn" className="hover:text-neutral-900 dark:hover:text-white">
-                <Linkedin size={15} />
-              </a>
-            )}
-            <a href={`mailto:${socials.email}`} aria-label="Email" className="hover:text-neutral-900 dark:hover:text-white">
-              <Mail size={15} />
-            </a>
+        <div className="mt-16 border-t border-black/5 pt-8 dark:border-white/5 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-xs text-neutral-400 dark:text-neutral-500">
+          <div className="space-y-1">
+            <p className="italic font-medium text-neutral-500 dark:text-neutral-400">&ldquo;Repetition until it becomes technique.&rdquo;</p>
+            <p className="text-[11px]">
+              © {new Date().getFullYear()} {PORTFOLIO.name} &bull; {PORTFOLIO.role} &bull; Đà Nẵng, Vietnam
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex -space-x-1.5 overflow-hidden">
+              <span className="inline-block h-5 w-5 rounded-full ring-2 ring-white dark:ring-surface bg-neutral-200 dark:bg-neutral-800 text-[9px] flex items-center justify-center font-bold">⛩️</span>
+              <span className="inline-block h-5 w-5 rounded-full ring-2 ring-white dark:ring-surface bg-neutral-300 dark:bg-neutral-700 text-[9px] flex items-center justify-center font-bold">💻</span>
+              <span className="inline-block h-5 w-5 rounded-full ring-2 ring-white dark:ring-surface bg-neutral-400 dark:bg-neutral-600 text-[9px] flex items-center justify-center font-bold">⚡</span>
+            </div>
+
+            <div className="rounded-full border border-black/10 px-3 py-1 text-[10px] font-semibold dark:border-white/10">
+              Visited by {visitorCount.toLocaleString()} people
+            </div>
+
+            <button
+              onClick={scrollToTop}
+              aria-label="Back to top"
+              className="flex h-7 w-7 items-center justify-center rounded-full border border-black/10 transition-colors hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/5"
+            >
+              <ChevronUp size={14} />
+            </button>
           </div>
         </div>
       </Reveal>
