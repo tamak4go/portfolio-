@@ -49,7 +49,6 @@ export interface EventItem {
 export interface OutsideData {
   blurb: string;
   tags: string[];
-  photo?: string;
 }
 
 export const PORTFOLIO = {
@@ -165,7 +164,6 @@ export const PORTFOLIO = {
   outside: {
     blurb: "When I step away from the screen, I recharge through {{tags}} — it keeps my work fresh and my head clear.",
     tags: ["traveling", "photography", "football", "gaming"],
-    photo: "/avatars/avatar-dark.png",
   } satisfies OutsideData,
 
   githubUsername: "tamak4go",
