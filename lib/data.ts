@@ -109,8 +109,8 @@ export const PORTFOLIO = {
       year: "2026",
       status: "live",
       description:
-        "Upload trip photos and it reconstructs the route from the GPS data embedded in them, generating a shareable link so friends can view the trip — no login required. Supports batch/folder uploads, Google Takeout exports, and HEIC photos.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL"],
+        "Upload trip photos and it reconstructs the route from the GPS data embedded in them. Redesigned into a full app with Google sign-in, a dashboard (map view, gallery, stats), and social features — an Explore feed of public rides and a Community page — plus a Pro tier.",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL", "Vitest"],
       thumbnail: "/projects/trackingtours.gif",
       liveUrl: "https://trackingtours.vercel.app",
       repoUrl: "https://github.com/tamak4go/trackingtours",
@@ -200,4 +200,5 @@ export const BRAND_COLORS: Record<string, string> = {
   "tailwind css": "#38BDF8",
   supabase: "#3ECF8E",
   "maplibre gl": "#396CB2",
+  vitest: "#6E9F18",
 };

@@ -16,6 +16,7 @@ import {
   SiTailwindcss,
   SiSupabase,
   SiMaplibre,
+  SiVitest,
 } from "react-icons/si";
 import { Webhook, RefreshCw } from "lucide-react";
 
@@ -39,6 +40,7 @@ export const TECH_ICONS: Record<string, IconType> = {
   "tailwind css": SiTailwindcss,
   supabase: SiSupabase,
   "maplibre gl": SiMaplibre,
+  vitest: SiVitest,
   "rest api": Webhook,
   "agile/scrum": RefreshCw,
 };
