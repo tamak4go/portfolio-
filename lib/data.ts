@@ -56,7 +56,7 @@ export const PORTFOLIO = {
   name: "Trịnh Quang Tâm",
   role: "Full-Stack Web Developer",
   roleTagline: "React, Next.js & Node.js",
-  status: "Available for internships & junior roles",
+  status: "Available for internship & fresher roles",
   avatarText: "TQT",
   // Swapped automatically based on the active theme. Both point at the same
   // photo for now — drop in a distinct light/dark variant if you want one.
@@ -170,7 +170,7 @@ export const PORTFOLIO = {
 
   contact: {
     blurb:
-      "Final-year IT student open to internships and junior full-stack web developer roles.",
+      "Final-year IT student open to internship and fresher full-stack web developer roles.",
     phone: "+84 862 544 627",
   },
 
