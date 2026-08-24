@@ -159,33 +159,13 @@ export const PORTFOLIO = {
   // Add real posts here to populate the Writing section — leave empty to hide it.
   writing: [] as WritingItem[],
 
-  events: [
-    {
-      date: "May 2026",
-      title: "Google Antigravity IDE Hackathon Certificate",
-      issuer: "Google Developers",
-    },
-    {
-      date: "Dec 2025",
-      title: "Information Technology Student of the Year (Nominee)",
-      issuer: "FPT University Đà Nẵng",
-    },
-    {
-      date: "Oct 2025",
-      title: "Java SE 11 Developer Certification",
-      issuer: "Oracle",
-    },
-    {
-      date: "Jul 2025",
-      title: "Responsive Web Design Certification",
-      issuer: "freeCodeCamp",
-    },
-  ] satisfies EventItem[],
+  // Add real certificates/events here — the section hides itself while empty.
+  events: [] as EventItem[],
 
   outside: {
     blurb: "When I step away from the screen, I recharge through {{tags}} — it keeps my work fresh and my head clear.",
     tags: ["traveling", "photography", "football", "gaming"],
-    photo: "/avatars/avatar-fade.jpg",
+    photo: "/avatars/avatar-dark.png",
   } satisfies OutsideData,
 
   githubUsername: "tamak4go",

@@ -1,26 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Github, Linkedin, Mail, ChevronUp } from "lucide-react";
+import { Mail, ChevronUp } from "lucide-react";
 import { PORTFOLIO } from "@/lib/data";
 import { Reveal } from "./Reveal";
 
 export function Footer() {
   const { socials, contact } = PORTFOLIO;
-  const [visitorCount, setVisitorCount] = useState(1814);
-
-  useEffect(() => {
-    const key = "portfolio_visits";
-    const current = localStorage.getItem(key);
-    let countVal = 1814;
-    if (current) {
-      countVal = parseInt(current, 10) + 1;
-    } else {
-      countVal = Math.floor(Math.random() * 10) + 1814;
-    }
-    localStorage.setItem(key, countVal.toString());
-    setVisitorCount(countVal);
-  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -56,7 +41,7 @@ export function Footer() {
 
         <div className="mt-16 border-t border-black/5 pt-8 dark:border-white/5 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-xs text-neutral-400 dark:text-neutral-500">
           <div className="space-y-1">
-            <p className="italic font-medium text-neutral-500 dark:text-neutral-400">&ldquo;Repetition until it becomes technique.&rdquo;</p>
+            <p className="italic font-medium text-neutral-500 dark:text-neutral-400">&ldquo;No sleep, no dreams.&rdquo;</p>
             <p className="text-[11px]">
               © {new Date().getFullYear()} {PORTFOLIO.name} &bull; {PORTFOLIO.role} &bull; Đà Nẵng, Vietnam
             </p>
@@ -67,10 +52,6 @@ export function Footer() {
               <span className="inline-block h-5 w-5 rounded-full ring-2 ring-white dark:ring-surface bg-neutral-200 dark:bg-neutral-800 text-[9px] flex items-center justify-center font-bold">⛩️</span>
               <span className="inline-block h-5 w-5 rounded-full ring-2 ring-white dark:ring-surface bg-neutral-300 dark:bg-neutral-700 text-[9px] flex items-center justify-center font-bold">💻</span>
               <span className="inline-block h-5 w-5 rounded-full ring-2 ring-white dark:ring-surface bg-neutral-400 dark:bg-neutral-600 text-[9px] flex items-center justify-center font-bold">⚡</span>
-            </div>
-
-            <div className="rounded-full border border-black/10 px-3 py-1 text-[10px] font-semibold dark:border-white/10">
-              Visited by {visitorCount.toLocaleString()} people
             </div>
 
             <button
