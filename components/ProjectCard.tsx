@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import type { Project } from "@/lib/data";
 import { BRAND_COLORS } from "@/lib/data";
+import { getTechIcon, getTechIconColor } from "@/lib/tech-icons";
 
 const STATUS_LABEL: Record<Project["status"], string> = {
   live: "Live",
@@ -25,7 +26,7 @@ export function ProjectCard({ project }: { project: Project }) {
       className="group flex flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-surface"
     >
       <div
-        className="flex h-36 items-center justify-center bg-gradient-to-br from-neutral-100 to-neutral-200 bg-cover bg-center text-xs font-bold uppercase tracking-wider text-neutral-400 dark:from-neutral-900 dark:to-black"
+        className="flex h-36 items-center justify-center bg-gradient-to-br from-neutral-100 to-neutral-200 bg-cover bg-center text-xs font-bold uppercase tracking-wider text-neutral-400 transition-transform duration-500 ease-out group-hover:scale-105 dark:from-neutral-900 dark:to-black"
         style={project.thumbnail ? { backgroundImage: `url(${project.thumbnail})` } : undefined}
       >
         {!project.thumbnail && project.title}
@@ -44,17 +45,23 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">{project.description}</p>
         {project.tech.length > 0 && (
           <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
-            {project.tech.map((t) => (
-              <span
-                key={t}
-                className="inline-flex items-center gap-1.5 rounded-full bg-black/5 px-2 py-0.5 text-[11px] text-neutral-500 dark:bg-white/5 dark:text-neutral-400"
-              >
-                {BRAND_COLORS[t.toLowerCase()] && (
-                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: BRAND_COLORS[t.toLowerCase()] }} />
-                )}
-                {t}
-              </span>
-            ))}
+            {project.tech.map((t) => {
+              const color = BRAND_COLORS[t.toLowerCase()];
+              const Icon = getTechIcon(t);
+              return (
+                <span
+                  key={t}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-black/5 px-2 py-0.5 text-[11px] text-neutral-500 dark:bg-white/5 dark:text-neutral-400"
+                >
+                  {Icon ? (
+                    <Icon size={11} className="shrink-0" style={{ color: getTechIconColor(color) }} />
+                  ) : (
+                    color && <span className="h-1.5 w-1.5 rounded-full" style={{ background: color }} />
+                  )}
+                  {t}
+                </span>
+              );
+            })}
           </div>
         )}
         {(project.liveUrl || project.repoUrl) && (

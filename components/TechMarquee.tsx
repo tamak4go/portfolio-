@@ -1,11 +1,17 @@
 import { PORTFOLIO, BRAND_COLORS } from "@/lib/data";
+import { getTechIcon, getTechIconColor } from "@/lib/tech-icons";
 import { Reveal } from "./Reveal";
 
 function Pill({ tech }: { tech: string }) {
   const color = BRAND_COLORS[tech.toLowerCase()];
+  const Icon = getTechIcon(tech);
   return (
     <span className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg border border-dashed border-black/15 bg-white px-3.5 py-1.5 text-sm text-neutral-700 shadow-sm dark:border-white/15 dark:bg-surface dark:text-neutral-200">
-      {color && <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: color }} />}
+      {Icon ? (
+        <Icon size={15} className="shrink-0" style={{ color: getTechIconColor(color) }} />
+      ) : (
+        color && <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: color }} />
+      )}
       {tech}
     </span>
   );
