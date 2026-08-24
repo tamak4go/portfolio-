@@ -40,6 +40,7 @@ export function ProjectCard({ project }: { project: Project }) {
             {STATUS_LABEL[project.status]}
           </span>
         </div>
+        <p className="-mt-1.5 text-xs font-medium text-neutral-400 dark:text-neutral-500">{project.role}</p>
         <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">{project.description}</p>
         {project.tech.length > 0 && (
           <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
@@ -59,12 +60,23 @@ export function ProjectCard({ project }: { project: Project }) {
         {(project.liveUrl || project.repoUrl) && (
           <div className="mt-3 flex items-center gap-4 border-t border-black/5 pt-3 text-xs font-semibold dark:border-white/5">
             {project.liveUrl && (
-              <a href={project.liveUrl} target="_blank" rel="noopener" className="inline-flex items-center gap-1 text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">
-                Live Demo <ExternalLink size={12} />
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener"
+                className="group/link inline-flex items-center gap-1 uppercase tracking-wide text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+              >
+                Visit site
+                <ExternalLink size={12} className="transition-transform group-hover/link:scale-110 group-hover/link:-translate-y-0.5" />
               </a>
             )}
             {project.repoUrl && (
-              <a href={project.repoUrl} target="_blank" rel="noopener" className="inline-flex items-center gap-1 text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener"
+                className="group/link inline-flex items-center gap-1 text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+              >
                 <Github size={12} /> Repo
               </a>
             )}

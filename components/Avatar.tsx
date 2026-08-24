@@ -2,9 +2,21 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { PORTFOLIO } from "@/lib/data";
 
 export function Avatar({ size = 72, fancy = false }: { size?: number; fancy?: boolean }) {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  // Before mount we don't know the resolved theme yet (avoids a
+  // server/client hydration mismatch) — default to the dark variant since
+  // that matches this site's defaultTheme. Both images are absolutely
+  // positioned and cross-fade via opacity, so swapping never shifts layout.
+  const isDark = !mounted || resolvedTheme !== "light";
+
   const inner = (
     <motion.div
       whileHover={fancy ? undefined : { scale: 1.04 }}
@@ -12,15 +24,27 @@ export function Avatar({ size = 72, fancy = false }: { size?: number; fancy?: bo
       className={`avatar-glitch relative shrink-0 overflow-hidden rounded-full border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5 ${fancy ? "avatar-fancy" : ""}`}
       style={{ width: size, height: size }}
     >
-      {PORTFOLIO.avatarUrl ? (
-        <Image
-          src={PORTFOLIO.avatarUrl}
-          alt={PORTFOLIO.name}
-          fill
-          sizes={`${size}px`}
-          className="object-cover"
-          priority
-        />
+      {PORTFOLIO.avatarDarkUrl || PORTFOLIO.avatarLightUrl ? (
+        <>
+          <Image
+            src={PORTFOLIO.avatarDarkUrl}
+            alt={PORTFOLIO.name}
+            fill
+            sizes={`${size}px`}
+            className="object-cover transition-opacity duration-300 ease-in-out"
+            style={{ opacity: isDark ? 1 : 0 }}
+            priority
+          />
+          <Image
+            src={PORTFOLIO.avatarLightUrl}
+            alt={PORTFOLIO.name}
+            fill
+            sizes={`${size}px`}
+            className="object-cover transition-opacity duration-300 ease-in-out"
+            style={{ opacity: isDark ? 0 : 1 }}
+            priority
+          />
+        </>
       ) : (
         <div
           className="avatar-fallback flex h-full w-full items-center justify-center font-bold text-neutral-700 dark:text-neutral-200"

@@ -6,6 +6,7 @@
 
 export interface Project {
   title: string;
+  role: string;
   year: string;
   status: "live" | "in-progress" | "coming-soon";
   description: string;
@@ -13,6 +14,15 @@ export interface Project {
   thumbnail?: string;
   liveUrl?: string;
   repoUrl?: string;
+}
+
+export interface FeaturedProject {
+  label: string;
+  title: string;
+  description: string;
+  tech: string[];
+  thumbnail?: string;
+  caseStudyUrl: string;
 }
 
 export interface ExperienceItem {
@@ -37,7 +47,10 @@ export const PORTFOLIO = {
   roleTagline: "React, Next.js & Node.js",
   status: "Available for internships & junior roles",
   avatarText: "TQT",
-  avatarUrl: "/avatar.jpg",
+  // Swapped automatically based on the active theme. Both point at the same
+  // photo for now — drop in a distinct light/dark variant if you want one.
+  avatarLightUrl: "/avatars/avatar-light.png",
+  avatarDarkUrl: "/avatars/avatar-dark.png",
 
   bio: "Final-year Information Technology student at FPT University and a full-stack web developer building end-to-end products with React, Next.js, Node.js, MySQL and MongoDB. I designed, built, and deployed my graduation project, TMPMS, solo — from requirements analysis and database design to API development and UI implementation.",
 
@@ -58,9 +71,20 @@ export const PORTFOLIO = {
     { label: "Contact", href: "#contact" },
   ],
 
+  featured: {
+    label: "FEATURED BUILD",
+    title: "TMPMS: my graduation project, live in production.",
+    description:
+      "A full-stack system I designed and built solo, from database schema to deployment.",
+    tech: ["React", "Next.js", "Node.js", "MySQL", "MongoDB"],
+    thumbnail: "",
+    caseStudyUrl: "https://tmpms.io.vn/",
+  } satisfies FeaturedProject,
+
   projects: [
     {
       title: "TMPMS",
+      role: "Creator & Sole Developer",
       year: "2026",
       status: "live",
       description:
@@ -72,6 +96,7 @@ export const PORTFOLIO = {
     },
     {
       title: "Tracking Phượt",
+      role: "Creator & Sole Developer",
       year: "2026",
       status: "live",
       description:
@@ -83,6 +108,7 @@ export const PORTFOLIO = {
     },
     {
       title: "Next Build",
+      role: "Creator & Sole Developer",
       year: "2026",
       status: "coming-soon",
       description: "Something new is taking shape behind the scenes. Stay tuned.",

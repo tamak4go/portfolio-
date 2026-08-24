@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { FeaturedProject } from "@/components/FeaturedProject";
 import { TechMarquee } from "@/components/TechMarquee";
 import { Projects } from "@/components/Projects";
 import { Experience } from "@/components/Experience";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <main className="mx-auto max-w-3xl px-6">
         <Hero />
+        <FeaturedProject />
         <Projects />
         <TechMarquee />
         <Experience />

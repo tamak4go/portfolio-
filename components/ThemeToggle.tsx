@@ -5,7 +5,11 @@ import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  // Compare against resolvedTheme, not theme — theme is "system" whenever
+  // the user hasn't explicitly toggled yet, which would otherwise make the
+  // icon wrong and the click handler always set "dark" (a no-op) instead of
+  // correctly flipping away from whatever the system preference resolved to.
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -14,11 +18,11 @@ export function ThemeToggle() {
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       aria-label="Toggle theme"
       className="flex h-8 w-8 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-white"
     >
-      {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+      {resolvedTheme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
     </button>
   );
 }
