@@ -71,6 +71,17 @@ export const PORTFOLIO = {
       repoUrl: "https://github.com/tamak4go",
     },
     {
+      title: "Tracking Phượt",
+      year: "2026",
+      status: "live",
+      description:
+        "Upload trip photos and it reconstructs the route from the GPS data embedded in them, generating a shareable link so friends can view the trip — no login required. Supports batch/folder uploads, Google Takeout exports, and HEIC photos.",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL"],
+      thumbnail: "",
+      liveUrl: "https://trackingtours.vercel.app",
+      repoUrl: "https://github.com/tamak4go/trackingtours",
+    },
+    {
       title: "Next Build",
       year: "2026",
       status: "coming-soon",
@@ -143,4 +154,7 @@ export const BRAND_COLORS: Record<string, string> = {
   "rest api": "#0EA5E9",
   postman: "#FF6C37",
   "agile/scrum": "#22C55E",
+  "tailwind css": "#38BDF8",
+  supabase: "#3ECF8E",
+  "maplibre gl": "#396CB2",
 };
