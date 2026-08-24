@@ -77,7 +77,7 @@ export const PORTFOLIO = {
     description:
       "A full-stack system I designed and built solo, from database schema to deployment.",
     tech: ["React", "Next.js", "Node.js", "MySQL", "MongoDB"],
-    thumbnail: "",
+    thumbnail: "/projects/tmpms.gif",
     caseStudyUrl: "https://tmpms.io.vn/",
   } satisfies FeaturedProject,
 
@@ -90,7 +90,7 @@ export const PORTFOLIO = {
       description:
         "Graduation project for FPT University — a full-stack system I designed and built solo: React/Next.js/Vue.js frontend, a Node.js backend with RESTful APIs, and MySQL/MongoDB databases. Covered the full cycle from requirements analysis and database design to API development, UI implementation, and production deployment.",
       tech: ["React", "Next.js", "Node.js", "MySQL", "MongoDB"],
-      thumbnail: "",
+      thumbnail: "/projects/tmpms.gif",
       liveUrl: "https://tmpms.io.vn/",
       repoUrl: "https://github.com/tamak4go",
     },
@@ -102,7 +102,7 @@ export const PORTFOLIO = {
       description:
         "Upload trip photos and it reconstructs the route from the GPS data embedded in them, generating a shareable link so friends can view the trip — no login required. Supports batch/folder uploads, Google Takeout exports, and HEIC photos.",
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL"],
-      thumbnail: "",
+      thumbnail: "/projects/trackingtours.gif",
       liveUrl: "https://trackingtours.vercel.app",
       repoUrl: "https://github.com/tamak4go/trackingtours",
     },
