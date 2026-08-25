@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { PORTFOLIO, BRAND_COLORS } from "@/lib/data";
 import { getTechIcon, getTechIconColor } from "@/lib/tech-icons";
@@ -5,18 +8,31 @@ import { Reveal } from "./Reveal";
 
 export function FeaturedProject() {
   const { featured } = PORTFOLIO;
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const el = cardRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty("--spot-x", `${e.clientX - rect.left}px`);
+    el.style.setProperty("--spot-y", `${e.clientY - rect.top}px`);
+  }
 
   return (
     <section className="pb-4 pt-2">
       <Reveal>
-        <div className="group flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition-colors dark:border-neutral-800 dark:bg-surface sm:flex-row">
+        <div
+          ref={cardRef}
+          onMouseMove={handleMouseMove}
+          className="spotlight-card group relative flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition-colors dark:border-neutral-800 dark:bg-surface sm:flex-row"
+        >
           <div className="h-44 shrink-0 overflow-hidden sm:h-auto sm:w-[42%]">
             <div
               className="h-full w-full bg-gradient-to-br from-neutral-100 to-neutral-200 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-105 dark:from-neutral-900 dark:to-black"
               style={featured.thumbnail ? { backgroundImage: `url(${featured.thumbnail})` } : undefined}
             />
           </div>
-          <div className="flex flex-1 flex-col gap-2.5 p-6">
+          <div className="relative flex flex-1 flex-col gap-2.5 p-6">
             <span className="text-[11px] font-bold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
               {featured.label}
             </span>

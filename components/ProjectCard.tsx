@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, CheckCircle2 } from "lucide-react";
 import type { Project } from "@/lib/data";
 import { BRAND_COLORS } from "@/lib/data";
 import { getTechIcon, getTechIconColor } from "@/lib/tech-icons";
@@ -19,11 +20,23 @@ const STATUS_CLASS: Record<Project["status"], string> = {
 };
 
 export function ProjectCard({ project }: { project: Project }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const el = cardRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty("--spot-x", `${e.clientX - rect.left}px`);
+    el.style.setProperty("--spot-y", `${e.clientY - rect.top}px`);
+  }
+
   return (
     <motion.div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.2 }}
-      className="group flex flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-surface"
+      className="spotlight-card group relative flex flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-surface"
     >
       <div
         className="flex h-36 items-center justify-center bg-gradient-to-br from-neutral-100 to-neutral-200 bg-cover bg-center text-xs font-bold uppercase tracking-wider text-neutral-400 transition-transform duration-500 ease-out group-hover:scale-105 dark:from-neutral-900 dark:to-black"
@@ -31,7 +44,7 @@ export function ProjectCard({ project }: { project: Project }) {
       >
         {!project.thumbnail && project.title}
       </div>
-      <div className="flex flex-1 flex-col gap-2 p-5">
+      <div className="relative flex flex-1 flex-col gap-2 p-5">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <h3 className="font-semibold">{project.title}</h3>
@@ -43,6 +56,18 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <p className="-mt-1.5 text-xs font-medium text-neutral-400 dark:text-neutral-500">{project.role}</p>
         <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">{project.description}</p>
+
+        {project.highlights && project.highlights.length > 0 && (
+          <ul className="space-y-1 pt-1">
+            {project.highlights.map((h) => (
+              <li key={h} className="flex items-start gap-1.5 text-xs text-neutral-500 dark:text-neutral-400">
+                <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-emerald-500" />
+                {h}
+              </li>
+            ))}
+          </ul>
+        )}
+
         {project.tech.length > 0 && (
           <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
             {project.tech.map((t) => {

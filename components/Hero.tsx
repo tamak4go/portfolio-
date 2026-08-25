@@ -11,8 +11,18 @@ const fadeUp = (delay: number) => ({
   transition: { duration: 0.6, delay, ease: [0.22, 0.61, 0.36, 1] as const },
 });
 
+const nameContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.05 } },
+};
+const nameWord = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 0.61, 0.36, 1] as const } },
+};
+
 export function Hero() {
   const { socials } = PORTFOLIO;
+  const nameWords = PORTFOLIO.name.split(" ");
   const links = [
     socials.github && { href: socials.github, icon: Github, label: "GitHub" },
     socials.linkedin && { href: socials.linkedin, icon: Linkedin, label: "LinkedIn" },
@@ -21,15 +31,27 @@ export function Hero() {
   ].filter(Boolean) as { href: string; icon: typeof Github; label: string }[];
 
   return (
-    <section id="about" className="pt-20 pb-4 sm:pt-28">
+    <section id="about" className="relative pt-20 pb-4 sm:pt-28">
+      <div className="hero-blob hero-blob-a -left-16 top-0 h-64 w-64 bg-cyan-400/50 dark:bg-cyan-400/40" />
+      <div className="hero-blob hero-blob-b -right-10 top-16 h-64 w-64 bg-fuchsia-500/40 dark:bg-fuchsia-500/35" />
+
       <motion.div {...fadeUp(0)} className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:text-left">
         <Avatar size={96} fancy />
 
         <div>
-          <h1 className="glitch-text cursor-default text-3xl font-semibold tracking-tight sm:text-4xl">
-            {PORTFOLIO.name}
+          <motion.h1
+            variants={nameContainer}
+            initial="hidden"
+            animate="visible"
+            className="glitch-text cursor-default text-3xl font-semibold tracking-tight sm:text-4xl"
+          >
+            {nameWords.map((word, i) => (
+              <motion.span key={i} variants={nameWord} className="mr-[0.25em] inline-block last:mr-0">
+                {word}
+              </motion.span>
+            ))}
             <BadgeCheck size={20} className="ml-1.5 inline-block align-middle fill-sky-500 text-white dark:text-neutral-950" />
-          </h1>
+          </motion.h1>
           <div className="mt-3 flex items-center justify-center gap-1.5 sm:justify-start">
             {links.map(({ href, icon: Icon, label }) => (
               <a

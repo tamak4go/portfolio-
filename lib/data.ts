@@ -10,6 +10,7 @@ export interface Project {
   year: string;
   status: "live" | "in-progress" | "coming-soon";
   description: string;
+  highlights?: string[];
   tech: string[];
   thumbnail?: string;
   liveUrl?: string;
@@ -98,6 +99,11 @@ export const PORTFOLIO = {
       status: "live",
       description:
         "Graduation project for FPT University — a full-stack system I designed and built solo: React/Next.js/Vue.js frontend, a Node.js backend with RESTful APIs, and MySQL/MongoDB databases. Covered the full cycle from requirements analysis and database design to API development, UI implementation, and production deployment.",
+      highlights: [
+        "Category-based product catalog with search",
+        "Prescription upload & pharmacist support",
+        "Live chat customer support widget",
+      ],
       tech: ["React", "Next.js", "Node.js", "MySQL", "MongoDB"],
       thumbnail: "/projects/tmpms.gif",
       liveUrl: "https://tmpms.io.vn/",
@@ -110,6 +116,11 @@ export const PORTFOLIO = {
       status: "live",
       description:
         "Upload trip photos and it reconstructs the route from the GPS data embedded in them. Redesigned into a full app with Google sign-in, a dashboard (map view, gallery, stats), and social features — an Explore feed of public rides and a Community page — plus a Pro tier.",
+      highlights: [
+        "GPS route reconstruction from photo EXIF data",
+        "Google sign-in, dashboard & Pro tier",
+        "Explore feed & Community stats",
+      ],
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL", "Vitest"],
       thumbnail: "/projects/trackingtours.gif",
       liveUrl: "https://trackingtours.vercel.app",
