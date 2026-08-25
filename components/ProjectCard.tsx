@@ -39,7 +39,7 @@ export function ProjectCard({ project }: { project: Project }) {
       className="spotlight-card group relative flex flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-surface"
     >
       <div
-        className="flex h-36 items-center justify-center bg-gradient-to-br from-neutral-100 to-neutral-200 bg-cover bg-center text-xs font-bold uppercase tracking-wider text-neutral-400 transition-transform duration-500 ease-out group-hover:scale-105 dark:from-neutral-900 dark:to-black"
+        className="thumb-glitch flex h-36 items-center justify-center bg-gradient-to-br from-neutral-100 to-neutral-200 bg-cover bg-center text-xs font-bold uppercase tracking-wider text-neutral-400 dark:from-neutral-900 dark:to-black"
         style={project.thumbnail ? { backgroundImage: `url(${project.thumbnail})` } : undefined}
       >
         {!project.thumbnail && project.title}

@@ -28,7 +28,7 @@ export function FeaturedProject() {
         >
           <div className="h-44 shrink-0 overflow-hidden sm:h-auto sm:w-[42%]">
             <div
-              className="h-full w-full bg-gradient-to-br from-neutral-100 to-neutral-200 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-105 dark:from-neutral-900 dark:to-black"
+              className="thumb-glitch h-full w-full bg-gradient-to-br from-neutral-100 to-neutral-200 bg-cover bg-center dark:from-neutral-900 dark:to-black"
               style={featured.thumbnail ? { backgroundImage: `url(${featured.thumbnail})` } : undefined}
             />
           </div>
