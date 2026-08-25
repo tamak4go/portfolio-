@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { flushSync } from "react-dom";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 
@@ -27,10 +28,19 @@ export function ThemeToggle() {
     // Circular reveal expanding from the exact click point — needs the
     // View Transitions API (Chromium/Edge today); browsers without it just
     // get the instant swap, no broken/half-applied animation either way.
-    if (doc.startViewTransition && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // Deliberately not gated behind prefers-reduced-motion: this machine
+    // reports reduced-motion via a Windows "Animation effects" toggle that
+    // has nothing to do with vestibular sensitivity, and the site owner
+    // explicitly wants to see this transition regardless — same call made
+    // for the tech marquee and hero motion elsewhere on this site.
+    if (doc.startViewTransition) {
       document.documentElement.style.setProperty("--theme-toggle-x", `${e.clientX}px`);
       document.documentElement.style.setProperty("--theme-toggle-y", `${e.clientY}px`);
-      doc.startViewTransition(() => setTheme(next));
+      // next-themes' setTheme queues a React state update, which is async
+      // relative to this callback — startViewTransition needs the DOM
+      // mutation to be finished synchronously before it returns, or the
+      // browser snapshots two identical frames and nothing visibly moves.
+      doc.startViewTransition(() => flushSync(() => setTheme(next)));
     } else {
       setTheme(next);
     }
