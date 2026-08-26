@@ -64,7 +64,7 @@ export const PORTFOLIO = {
   avatarLightUrl: "/avatars/avatar-light.png",
   avatarDarkUrl: "/avatars/avatar-dark.png",
 
-  bio: "Final-year Information Technology student at FPT University and a full-stack web developer building end-to-end products with React, Next.js, Node.js, MySQL and MongoDB. I designed, built, and deployed my graduation project, TMPMS, solo — from requirements analysis and database design to API development and UI implementation.",
+  bio: "Final-year Information Technology student at FPT University and a full-stack web developer working across React/Vite and ASP.NET Core. I designed, built, and deployed my graduation project, TMPMS, solo — from requirements analysis and database design to API development and UI implementation.",
 
   socials: {
     github: "https://github.com/tamak4go",
@@ -73,7 +73,8 @@ export const PORTFOLIO = {
     email: "ng.tammail@gmail.com",
   },
 
-  resumeUrl: "/resume.pdf",
+  resumeUrlEn: "/Trinh-Quang-Tam-CV-EN.pdf",
+  resumeUrlVi: "/Trinh-Quang-Tam-CV-VI.pdf",
 
   nav: [
     { label: "Projects", href: "/projects" },
@@ -83,10 +84,10 @@ export const PORTFOLIO = {
 
   featured: {
     label: "FEATURED BUILD",
-    title: "TMPMS: my graduation project, live in production.",
+    title: "TMPMS: a production pharmacy platform, built solo.",
     description:
-      "A full-stack system I designed and built solo, from database schema to deployment.",
-    tech: ["React", "Next.js", "Node.js", "MySQL", "MongoDB"],
+      "Traditional-medicine pharmacy management system — e-commerce, Đông Y diagnosis, appointment booking, and full nhà thuốc operations, live at tmpms.io.vn.",
+    tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "Docker"],
     thumbnail: "/projects/tmpms.gif",
     caseStudyUrl: "/projects/tmpms",
   } satisfies FeaturedProject,
@@ -98,13 +99,13 @@ export const PORTFOLIO = {
       year: "2026",
       status: "live",
       description:
-        "Graduation project for FPT University — a full-stack system I designed and built solo: React/Next.js/Vue.js frontend, a Node.js backend with RESTful APIs, and MySQL/MongoDB databases. Covered the full cycle from requirements analysis and database design to API development, UI implementation, and production deployment.",
+        "Graduation project for FPT University — a production pharmacy platform combining traditional (Đông Y) and Western medicine: e-commerce, online diagnosis, appointment booking with deposits, and full nhà thuốc operations. Designed and built solo, live at tmpms.io.vn.",
       highlights: [
-        "Category-based product catalog with search",
-        "Prescription upload & pharmacist support",
-        "Live chat customer support widget",
+        "ASP.NET Core 8 / EF Core backend on SQL Server",
+        "Real-time pharmacist chat & AI (Gemini) via SignalR",
+        "PayOS payments with idempotent webhooks",
       ],
-      tech: ["React", "Next.js", "Node.js", "MySQL", "MongoDB"],
+      tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Docker"],
       thumbnail: "/projects/tmpms.gif",
       liveUrl: "https://tmpms.io.vn/",
       repoUrl: "https://github.com/tamak4go",
@@ -212,4 +213,13 @@ export const BRAND_COLORS: Record<string, string> = {
   supabase: "#3ECF8E",
   "maplibre gl": "#396CB2",
   vitest: "#6E9F18",
+  "asp.net core": "#512BD4",
+  "asp.net core 8": "#512BD4",
+  "ef core": "#512BD4",
+  docker: "#2496ED",
+  vite: "#646CFF",
+  "gemini ai": "#8E75B2",
+  "sql server": "#CC2927",
+  signalr: "#512BD4",
+  payos: "#00B14F",
 };

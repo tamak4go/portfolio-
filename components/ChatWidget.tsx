@@ -15,7 +15,7 @@ interface Msg {
 function reply(msg: string): string {
   const m = msg.toLowerCase();
   if (m.includes("project") || m.includes("work")) {
-    return `My main graduation project is TMPMS, an e-commerce platform for traditional Vietnamese herbal medicine/pharmacy products, live at tmpms.io.vn. I also developed Tracking Phượt, which extracts GPS route data from trip photos. Check out my /projects page or /projects/tmpms case study for more details!`;
+    return `My main graduation project is TMPMS, a production pharmacy management system (e-commerce, Đông Y diagnosis, appointment booking) built solo on ASP.NET Core + React, live at tmpms.io.vn. I also developed Tracking Phượt, which extracts GPS route data from trip photos. Check out my /projects page or /projects/tmpms case study for more details!`;
   }
   if (m.includes("stack") || m.includes("tech") || m.includes("language") || m.includes("use")) {
     return `I work across the full stack with React, Next.js, Vue.js, Node.js, MySQL, and MongoDB. I also have Java experience from my internship at FPT Software.`;
@@ -24,7 +24,7 @@ function reply(msg: string): string {
     return `I am available for internships and junior full-stack developer roles! You can contact me at ng.tammail@gmail.com or call me at +84 862 544 627.`;
   }
   if (m.includes("resume") || m.includes("cv")) {
-    return `You can view my resume using the "View Resume" button on the homepage, or access it directly at /resume.pdf.`;
+    return `You can view my resume using the "View Resume" button on the homepage — pick English or Tiếng Việt from the dropdown.`;
   }
   return `Hi! I'm Tam's AI assistant. Ask me about my graduation project (TMPMS), my stack, my internship at FPT Software, or my contact info!`;
 }

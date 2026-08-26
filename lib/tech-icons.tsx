@@ -17,8 +17,12 @@ import {
   SiSupabase,
   SiMaplibre,
   SiVitest,
+  SiDotnet,
+  SiDocker,
+  SiVite,
+  SiGooglegemini,
 } from "react-icons/si";
-import { Webhook, RefreshCw } from "lucide-react";
+import { Webhook, RefreshCw, Database, Radio } from "lucide-react";
 
 // Real brand icons where one exists (from react-icons/si, MIT-licensed
 // simple-icons set) — falls back to a neutral lucide icon for
@@ -41,6 +45,14 @@ export const TECH_ICONS: Record<string, IconType> = {
   supabase: SiSupabase,
   "maplibre gl": SiMaplibre,
   vitest: SiVitest,
+  "asp.net core": SiDotnet,
+  "asp.net core 8": SiDotnet,
+  "ef core": SiDotnet,
+  docker: SiDocker,
+  vite: SiVite,
+  "gemini ai": SiGooglegemini,
+  "sql server": Database,
+  signalr: Radio,
   "rest api": Webhook,
   "agile/scrum": RefreshCw,
 };

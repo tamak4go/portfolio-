@@ -10,7 +10,7 @@ import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
 export default function TmpmsCaseStudy() {
-  const techStack = ["React", "Next.js", "Node.js", "MySQL", "MongoDB"];
+  const techStack = ["ASP.NET Core", "EF Core", "SQL Server", "React", "Vite", "SignalR", "Gemini AI", "PayOS", "Docker"];
 
   return (
     <>
@@ -30,9 +30,9 @@ export default function TmpmsCaseStudy() {
             <span className="text-[11px] font-bold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
               FEATURED BUILD
             </span>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">TMPMS: an online pharmacy platform.</h1>
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">TMPMS: a production pharmacy platform.</h1>
             <p className="text-base leading-relaxed text-neutral-500 dark:text-neutral-400">
-              TMPMS (&ldquo;Thảo Dược Cổ Truyền Việt Nam&rdquo;) is an e-commerce platform for traditional Vietnamese herbal medicine and pharmacy products, built as my graduation project at FPT University and live in production at{" "}
+              TMPMS is a traditional-and-Western-medicine pharmacy management system — e-commerce, Đông Y diagnosis, appointment booking with deposits, and full nhà thuốc operations. Built as my graduation project at FPT University and live in production at{" "}
               <a href="https://tmpms.io.vn/" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-neutral-900 dark:hover:text-white">
                 tmpms.io.vn
               </a>.
@@ -42,7 +42,7 @@ export default function TmpmsCaseStudy() {
           {/* Highlight note box */}
           <div className="my-6 rounded-xl border border-black/5 bg-black/5 p-4 dark:border-white/5 dark:bg-white/5">
             <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
-              <strong className="text-neutral-900 dark:text-white">Note:</strong> Solo-developed graduation project covering requirements analysis, database design, API development, UI implementation, and production deployment.
+              <strong className="text-neutral-900 dark:text-white">Note:</strong> Solo-developed graduation project — requirements analysis, database design, backend/API, real-time features, and production deployment, end to end.
             </p>
           </div>
 
@@ -61,27 +61,27 @@ export default function TmpmsCaseStudy() {
             <h2 className="text-2xl font-semibold tracking-tight">Core Modules</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-black/5 p-5 dark:border-white/5 dark:bg-surface">
-                <h3 className="font-semibold text-base mb-1.5">Product Catalog &amp; Search</h3>
+                <h3 className="font-semibold text-base mb-1.5">Đông Y Diagnosis &amp; Booking</h3>
                 <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  Browse and search herbal medicine, functional foods, cosmeceuticals, medicine, personal care, and medical equipment across category-based storefronts.
+                  Traditional-medicine (Đông Y) diagnosis flow with appointment booking and deposit holds, alongside standard e-commerce for pharmacy products.
                 </p>
               </div>
               <div className="rounded-xl border border-black/5 p-5 dark:border-white/5 dark:bg-surface">
-                <h3 className="font-semibold text-base mb-1.5">Prescription &amp; Pharmacist Support</h3>
+                <h3 className="font-semibold text-base mb-1.5">Real-Time Chat &amp; AI</h3>
                 <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  Customers can submit a prescription for pharmacist dispensing, or use the self-diagnosis tool to get traditional-medicine product suggestions.
+                  Live pharmacist chat over SignalR, plus a Gemini-AI-backed chatbot with a 4-model fallback chain for OCR, TCM meridian analysis, and product search.
                 </p>
               </div>
               <div className="rounded-xl border border-black/5 p-5 dark:border-white/5 dark:bg-surface">
-                <h3 className="font-semibold text-base mb-1.5">Accounts, Cart &amp; Orders</h3>
+                <h3 className="font-semibold text-base mb-1.5">Inventory &amp; Payments</h3>
                 <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  User accounts, shopping cart, and order history, backed by MySQL for relational data and MongoDB for flexible content like product listings.
+                  FEFO (first-expiry-first-out) inventory management, automated flash sales, and PayOS payments with idempotent, signature-verified webhooks.
                 </p>
               </div>
               <div className="rounded-xl border border-black/5 p-5 dark:border-white/5 dark:bg-surface">
-                <h3 className="font-semibold text-base mb-1.5">Health Tools &amp; Live Support</h3>
+                <h3 className="font-semibold text-base mb-1.5">Roles &amp; Operations</h3>
                 <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  Pharmacy finder, vaccination booking, and a live chat widget for customer support, alongside seasonal promotions and flash sales.
+                  Three user roles — customer, pharmacy staff, and admin — covering the full nhà thuốc workflow, with Serializable transaction isolation to prevent booking conflicts.
                 </p>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function TmpmsCaseStudy() {
               })}
             </div>
             <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400 mt-4">
-              Frontend built with React, Next.js, and Vue.js; backend services and RESTful APIs with Node.js; MySQL and MongoDB for structured and flexible data respectively — covering everything from requirements analysis and database design to API development, UI implementation, and production deployment, solo.
+              Layered ASP.NET Core 8 / EF Core backend on SQL Server with JWT + Identity auth; React 19 + Vite frontend; SignalR for real-time chat backed by Gemini AI; PayOS for payments; deployed via Docker to a VPS behind a reverse proxy — covering everything from requirements analysis and database design to API development, UI implementation, and production deployment, solo.
             </p>
           </div>
         </Reveal>

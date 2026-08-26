@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter, ArrowRight, BadgeCheck } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Github, Linkedin, Mail, Twitter, ArrowRight, BadgeCheck, ChevronDown } from "lucide-react";
 import { PORTFOLIO } from "@/lib/data";
 import { Avatar } from "./Avatar";
 
@@ -23,6 +24,20 @@ const nameWord = {
 export function Hero() {
   const { socials } = PORTFOLIO;
   const nameWords = PORTFOLIO.name.split(" ");
+  const [resumeMenuOpen, setResumeMenuOpen] = useState(false);
+  const resumeMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!resumeMenuOpen) return;
+    function onClickOutside(e: MouseEvent) {
+      if (resumeMenuRef.current && !resumeMenuRef.current.contains(e.target as Node)) {
+        setResumeMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
+  }, [resumeMenuOpen]);
+
   const links = [
     socials.github && { href: socials.github, icon: Github, label: "GitHub" },
     socials.linkedin && { href: socials.linkedin, icon: Linkedin, label: "LinkedIn" },
@@ -88,13 +103,50 @@ export function Hero() {
         {PORTFOLIO.bio}
       </motion.p>
 
-      <motion.div {...fadeUp(0.28)} className="mt-6 flex items-center justify-center sm:justify-start">
-        <a
-          href={PORTFOLIO.resumeUrl}
+      <motion.div {...fadeUp(0.28)} className="relative mt-6 flex items-center justify-center sm:justify-start" ref={resumeMenuRef}>
+        <button
+          type="button"
+          onClick={() => setResumeMenuOpen((v) => !v)}
+          aria-haspopup="menu"
+          aria-expanded={resumeMenuOpen}
           className="inline-flex items-center gap-1.5 rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-85 dark:bg-white dark:text-neutral-900"
         >
-          View Resume <ArrowRight size={14} />
-        </a>
+          View Resume <ChevronDown size={14} className={`transition-transform ${resumeMenuOpen ? "rotate-180" : ""}`} />
+        </button>
+
+        <AnimatePresence>
+          {resumeMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -6, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -6, scale: 0.97 }}
+              transition={{ duration: 0.15 }}
+              role="menu"
+              className="absolute left-0 top-full z-20 mt-2 w-44 overflow-hidden rounded-xl border border-black/10 bg-white py-1 shadow-xl dark:border-white/10 dark:bg-surface"
+            >
+              <a
+                href={PORTFOLIO.resumeUrlEn}
+                target="_blank"
+                rel="noopener"
+                role="menuitem"
+                onClick={() => setResumeMenuOpen(false)}
+                className="flex items-center justify-between px-3.5 py-2 text-sm font-medium text-neutral-600 hover:bg-black/5 dark:text-neutral-300 dark:hover:bg-white/5"
+              >
+                English <ArrowRight size={13} />
+              </a>
+              <a
+                href={PORTFOLIO.resumeUrlVi}
+                target="_blank"
+                rel="noopener"
+                role="menuitem"
+                onClick={() => setResumeMenuOpen(false)}
+                className="flex items-center justify-between px-3.5 py-2 text-sm font-medium text-neutral-600 hover:bg-black/5 dark:text-neutral-300 dark:hover:bg-white/5"
+              >
+                Tiếng Việt <ArrowRight size={13} />
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </section>
   );
