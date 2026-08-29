@@ -8,6 +8,9 @@
   --fg: 10 10 10;
   --fg-muted: 82 82 82;
   --border: 228 228 228;
+  /* Jade + herbal-gold accent pair, tuned for AA text contrast on --bg-elevated */
+  --accent: 4 120 87;
+  --accent-warm: 146 90 15;
 }
 
 .dark {
@@ -16,6 +19,8 @@
   --fg: 245 245 245;
   --fg-muted: 163 163 163;
   --border: 255 255 255;
+  --accent: 52 211 153;
+  --accent-warm: 251 191 36;
 }
 
 * {
@@ -40,14 +45,14 @@ body {
   background: rgb(var(--fg) / 0.15);
 }
 
-/* ---- Cyber avatar ring + glow ---- */
+/* ---- Jade/gold avatar ring + glow ---- */
 .avatar-ring::before {
   content: "";
   position: absolute;
   inset: -5px;
   border-radius: 9999px;
   padding: 2px;
-  background: conic-gradient(from 0deg, #00f0ff, #ff0055, #7c3aed, #00f0ff);
+  background: conic-gradient(from 0deg, rgb(var(--accent)), rgb(var(--accent-warm)), rgb(var(--accent) / 0.6), rgb(var(--accent)));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -60,7 +65,7 @@ body {
   inset: -16px;
   z-index: -1;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgb(0 240 255 / 0.28), transparent 70%);
+  background: radial-gradient(circle, rgb(var(--accent) / 0.28), transparent 70%);
   filter: blur(8px);
 }
 @keyframes avatar-ring-spin {
@@ -79,7 +84,7 @@ body {
   0%, 100% {
     clip-path: inset(0 0 0 0);
     transform: translate(0, 0);
-    filter: drop-shadow(2px 0 0 #00f0ff) drop-shadow(-2px 0 0 #ff0055);
+    filter: drop-shadow(2px 0 0 rgb(var(--accent))) drop-shadow(-2px 0 0 rgb(var(--accent-warm)));
   }
   20% { clip-path: inset(8% 0 62% 0); transform: translate(-2px, 0); }
   40% { clip-path: inset(62% 0 8% 0); transform: translate(2px, 0); }
@@ -96,8 +101,8 @@ body {
   animation: text-glitch-anim 0.4s steps(2, jump-none) infinite;
 }
 @keyframes text-glitch-anim {
-  0%, 100% { text-shadow: 2px 0 #00f0ff, -2px 0 #ff0055; transform: translate(0, 0); }
-  50% { text-shadow: -2px 0 #00f0ff, 2px 0 #ff0055; transform: translate(0.5px, 0); }
+  0%, 100% { text-shadow: 2px 0 rgb(var(--accent)), -2px 0 rgb(var(--accent-warm)); transform: translate(0, 0); }
+  50% { text-shadow: -2px 0 rgb(var(--accent)), 2px 0 rgb(var(--accent-warm)); transform: translate(0.5px, 0); }
 }
 
 /* Rapid flicker effects are seizure/vestibular-sensitive even though the
@@ -123,7 +128,7 @@ body {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
-  background: radial-gradient(320px circle at var(--spot-x) var(--spot-y), rgb(0 240 255 / 0.10), transparent 70%);
+  background: radial-gradient(320px circle at var(--spot-x) var(--spot-y), rgb(var(--accent) / 0.10), transparent 70%);
 }
 .spotlight-card:hover::before {
   opacity: 1;
@@ -180,7 +185,7 @@ body {
   0%, 100% {
     clip-path: inset(0 0 0 0);
     transform: scale(1.05) translate(0, 0);
-    filter: drop-shadow(3px 0 0 rgb(0 240 255 / 0.55)) drop-shadow(-3px 0 0 rgb(255 0 85 / 0.55));
+    filter: drop-shadow(3px 0 0 rgb(var(--accent) / 0.55)) drop-shadow(-3px 0 0 rgb(var(--accent-warm) / 0.55));
   }
   20% { clip-path: inset(10% 0 55% 0); transform: scale(1.05) translate(-3px, 0); }
   40% { clip-path: inset(55% 0 10% 0); transform: scale(1.05) translate(3px, 0); }

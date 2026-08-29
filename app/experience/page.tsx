@@ -17,7 +17,7 @@ export default function ExperiencePage() {
           <div className="mb-8">
             <Link
               href="/"
-              className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
             >
               <ChevronLeft size={14} /> Back to Home
             </Link>
@@ -33,7 +33,7 @@ export default function ExperiencePage() {
                 key={i}
                 className="grid grid-cols-1 gap-1 border-t border-black/5 py-6 first:border-t-0 first:pt-0 dark:border-white/5 sm:grid-cols-[140px_1fr] sm:gap-6"
               >
-                <p className="text-xs text-neutral-400 mt-1">{e.dates}</p>
+                <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">{e.dates}</p>
                 <div>
                   <h3 className="font-semibold text-lg">{e.role}</h3>
                   <p className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -59,7 +59,7 @@ export default function ExperiencePage() {
                   key={i}
                   className="grid grid-cols-1 gap-1 border-t border-black/5 py-6 first:border-t-0 first:pt-0 dark:border-white/5 sm:grid-cols-[140px_1fr] sm:gap-6"
                 >
-                  <p className="text-xs text-neutral-400 mt-1">{e.dates}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">{e.dates}</p>
                   <div>
                     <h3 className="font-semibold text-lg">{e.degree}</h3>
                     <p className="text-sm text-neutral-500 dark:text-neutral-400">

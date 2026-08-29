@@ -38,7 +38,7 @@ export function Outside() {
               ))}
             </div>
           </div>
-          <div className="group relative h-44 w-full shrink-0 overflow-hidden rounded-xl border border-black/10 dark:border-white/10 sm:h-32 sm:w-44">
+          <div className="group relative h-32 w-32 shrink-0 self-start overflow-hidden rounded-xl border border-black/10 dark:border-white/10 sm:h-32 sm:w-44">
             <div
               className="absolute inset-0 bg-cover bg-center transition-[opacity,transform] duration-300 ease-in-out group-hover:scale-105"
               style={{ backgroundImage: `url(${PORTFOLIO.avatarDarkUrl})`, opacity: isDark ? 1 : 0 }}

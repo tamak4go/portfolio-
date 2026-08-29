@@ -14,9 +14,9 @@ const STATUS_LABEL: Record<Project["status"], string> = {
 };
 
 const STATUS_CLASS: Record<Project["status"], string> = {
-  live: "bg-emerald-500/10 text-emerald-500",
-  "in-progress": "bg-amber-500/10 text-amber-500",
-  "coming-soon": "bg-black/5 text-neutral-400 dark:bg-white/5",
+  live: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
+  "in-progress": "bg-amber-500/10 text-amber-700 dark:text-amber-400",
+  "coming-soon": "bg-black/5 text-neutral-500 dark:bg-white/5 dark:text-neutral-400",
 };
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -48,20 +48,20 @@ export function ProjectCard({ project }: { project: Project }) {
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <h3 className="font-semibold">{project.title}</h3>
-            <span className="text-xs text-neutral-400">{project.year}</span>
+            <span className="text-xs text-neutral-500 dark:text-neutral-400">{project.year}</span>
           </div>
           <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${STATUS_CLASS[project.status]}`}>
             {STATUS_LABEL[project.status]}
           </span>
         </div>
-        <p className="-mt-1.5 text-xs font-medium text-neutral-400 dark:text-neutral-500">{project.role}</p>
+        <p className="-mt-1.5 text-xs font-medium text-neutral-500 dark:text-neutral-400">{project.role}</p>
         <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">{project.description}</p>
 
         {project.highlights && project.highlights.length > 0 && (
           <ul className="space-y-1 pt-1">
             {project.highlights.map((h) => (
               <li key={h} className="flex items-start gap-1.5 text-xs text-neutral-500 dark:text-neutral-400">
-                <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-emerald-500" />
+                <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-emerald-700 dark:text-emerald-400" />
                 {h}
               </li>
             ))}
@@ -76,7 +76,7 @@ export function ProjectCard({ project }: { project: Project }) {
               return (
                 <span
                   key={t}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-black/5 px-2 py-0.5 text-[11px] text-neutral-500 dark:bg-white/5 dark:text-neutral-400"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-black/5 px-2 py-0.5 font-mono text-[11px] text-neutral-500 dark:bg-white/5 dark:text-neutral-400"
                 >
                   {Icon ? (
                     <Icon size={11} className="shrink-0" style={{ color: getTechIconColor(color) }} />

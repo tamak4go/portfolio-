@@ -50,7 +50,7 @@ export function ThemeToggle() {
     <button
       onClick={handleToggle}
       aria-label="Toggle theme"
-      className="flex h-8 w-8 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-white"
+      className="flex h-8 w-8 items-center justify-center rounded-full text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
     >
       {resolvedTheme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
     </button>

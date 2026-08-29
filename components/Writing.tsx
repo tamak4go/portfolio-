@@ -20,11 +20,11 @@ export function Writing() {
             >
               <div>
                 <h3 className="font-medium group-hover:underline">{w.title}</h3>
-                <p className="mt-0.5 text-xs text-neutral-400">
+                <p className="mt-0.5 text-xs text-neutral-500 dark:text-neutral-400">
                   {w.date} · {w.readTime}
                 </p>
               </div>
-              <ArrowUpRight size={16} className="shrink-0 text-neutral-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <ArrowUpRight size={16} className="shrink-0 text-neutral-500 dark:text-neutral-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           ))}
         </div>

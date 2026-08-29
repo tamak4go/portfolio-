@@ -20,19 +20,19 @@ export default function TmpmsCaseStudy() {
           <div className="mb-6">
             <Link
               href="/"
-              className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
             >
               <ChevronLeft size={14} /> Back to Home
             </Link>
           </div>
 
           <div className="space-y-4">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
               FEATURED BUILD
             </span>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">TMPMS: a production pharmacy platform.</h1>
             <p className="text-base leading-relaxed text-neutral-500 dark:text-neutral-400">
-              TMPMS is a traditional-and-Western-medicine pharmacy management system — e-commerce, Đông Y diagnosis, appointment booking with deposits, and full nhà thuốc operations. Built as my graduation project at FPT University and live in production at{" "}
+              TMPMS is a traditional-and-Western-medicine pharmacy management system: e-commerce, Đông Y diagnosis, appointment booking with deposits, and full nhà thuốc operations. Built as my graduation project at FPT University and live in production at{" "}
               <a href="https://tmpms.io.vn/" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-neutral-900 dark:hover:text-white">
                 tmpms.io.vn
               </a>.
@@ -42,7 +42,7 @@ export default function TmpmsCaseStudy() {
           {/* Highlight note box */}
           <div className="my-6 rounded-xl border border-black/5 bg-black/5 p-4 dark:border-white/5 dark:bg-white/5">
             <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
-              <strong className="text-neutral-900 dark:text-white">Note:</strong> Solo-developed graduation project — requirements analysis, database design, backend/API, real-time features, and production deployment, end to end.
+              <strong className="text-neutral-900 dark:text-white">Note:</strong> Solo-developed graduation project, covering requirements analysis, database design, backend/API, real-time features, and production deployment end to end.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ export default function TmpmsCaseStudy() {
               <div className="rounded-xl border border-black/5 p-5 dark:border-white/5 dark:bg-surface">
                 <h3 className="font-semibold text-base mb-1.5">Roles &amp; Operations</h3>
                 <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  Three user roles — customer, pharmacy staff, and admin — covering the full nhà thuốc workflow, with Serializable transaction isolation to prevent booking conflicts.
+                  Three user roles (customer, pharmacy staff, and admin) covering the full nhà thuốc workflow, with Serializable transaction isolation to prevent booking conflicts.
                 </p>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function TmpmsCaseStudy() {
                 return (
                   <span
                     key={t}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-black/5 px-3.5 py-1 text-xs font-semibold text-neutral-600 dark:bg-white/5 dark:text-neutral-300"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-black/5 px-3.5 py-1 font-mono text-xs font-semibold text-neutral-600 dark:bg-white/5 dark:text-neutral-300"
                   >
                     {Icon ? (
                       <Icon size={12} className="shrink-0" style={{ color: getTechIconColor(color) }} />

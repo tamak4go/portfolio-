@@ -47,8 +47,8 @@ export function Hero() {
 
   return (
     <section id="about" className="relative pt-20 pb-4 sm:pt-28">
-      <div className="hero-blob hero-blob-a -left-16 top-0 h-64 w-64 bg-cyan-400/50 dark:bg-cyan-400/40" />
-      <div className="hero-blob hero-blob-b -right-10 top-16 h-64 w-64 bg-fuchsia-500/40 dark:bg-fuchsia-500/35" />
+      <div className="hero-blob hero-blob-a -left-16 top-0 h-64 w-64 bg-[rgb(var(--accent))]/50 dark:bg-[rgb(var(--accent))]/40" />
+      <div className="hero-blob hero-blob-b -right-10 top-16 h-64 w-64 bg-[rgb(var(--accent-warm))]/40 dark:bg-[rgb(var(--accent-warm))]/35" />
 
       <motion.div {...fadeUp(0)} className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:text-left">
         <Avatar size={96} fancy />
@@ -75,7 +75,7 @@ export function Hero() {
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel="noopener"
                 aria-label={label}
-                className="flex h-8 w-8 items-center justify-center rounded-lg text-neutral-400 transition-all duration-200 hover:scale-110 hover:text-neutral-900 dark:hover:text-white"
+                className="flex h-8 w-8 items-center justify-center rounded-lg text-neutral-500 transition-all duration-200 hover:scale-110 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
               >
                 <Icon size={16} />
               </a>
@@ -86,7 +86,7 @@ export function Hero() {
 
       <motion.div
         {...fadeUp(0.1)}
-        className="mt-6 flex items-center justify-center gap-2 text-xs font-medium text-emerald-500 sm:justify-start"
+        className="mt-6 flex items-center justify-center gap-2 text-xs font-medium text-emerald-700 dark:text-emerald-400 sm:justify-start"
       >
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -96,7 +96,7 @@ export function Hero() {
       </motion.div>
 
       <motion.p {...fadeUp(0.16)} className="mt-3 text-center text-lg text-neutral-500 dark:text-neutral-400 sm:text-left">
-        {PORTFOLIO.role} <span className="text-neutral-400 dark:text-neutral-600">— {PORTFOLIO.roleTagline}</span>
+        {PORTFOLIO.role} <span className="text-neutral-500 dark:text-neutral-400">— {PORTFOLIO.roleTagline}</span>
       </motion.p>
 
       <motion.p {...fadeUp(0.22)} className="mx-auto mt-5 max-w-xl text-center text-[15px] leading-relaxed text-neutral-500 dark:text-neutral-400 sm:mx-0 sm:text-left">

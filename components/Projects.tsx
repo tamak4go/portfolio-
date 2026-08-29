@@ -5,12 +5,19 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export function Projects() {
+  // Skip the project already told in full on the Featured Build card right
+  // above this section — repeating the same story back-to-back flattens the
+  // momentum instead of introducing something new.
+  const otherProjects = PORTFOLIO.projects
+    .filter((p) => !PORTFOLIO.featured.title.toLowerCase().includes(p.title.toLowerCase()))
+    .slice(0, 2);
+
   return (
     <section id="projects" className="border-t border-black/10 py-14 dark:border-white/10">
       <Reveal>
         <h2 className="mb-6 text-xl font-semibold tracking-tight">Projects</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {PORTFOLIO.projects.slice(0, 2).map((p, i) => (
+          {otherProjects.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.06}>
               <ProjectCard project={p} />
             </Reveal>

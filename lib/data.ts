@@ -59,12 +59,11 @@ export const PORTFOLIO = {
   roleTagline: "React, Next.js & Node.js",
   status: "Available for internship & fresher roles",
   avatarText: "TQT",
-  // Swapped automatically based on the active theme. Both point at the same
-  // photo for now — drop in a distinct light/dark variant if you want one.
+  // Distinct light/dark photos, swapped automatically based on the active theme.
   avatarLightUrl: "/avatars/avatar-light.png",
   avatarDarkUrl: "/avatars/avatar-dark.png",
 
-  bio: "Final-year Information Technology student at FPT University and a full-stack web developer working across React/Vite and ASP.NET Core. I designed, built, and deployed my graduation project, TMPMS, solo — from requirements analysis and database design to API development and UI implementation.",
+  bio: "Final-year Information Technology student at FPT University and a full-stack web developer working across React/Vite and ASP.NET Core. I designed, built, and deployed my graduation project, TMPMS, solo, covering everything from requirements analysis and database design to API development and UI implementation.",
 
   socials: {
     github: "https://github.com/tamak4go",
@@ -86,8 +85,8 @@ export const PORTFOLIO = {
     label: "FEATURED BUILD",
     title: "TMPMS: a production pharmacy platform, built solo.",
     description:
-      "Traditional-medicine pharmacy management system — e-commerce, Đông Y diagnosis, appointment booking, and full nhà thuốc operations, live at tmpms.io.vn.",
-    tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "Docker"],
+      "Traditional-medicine pharmacy management system: e-commerce, Đông Y diagnosis, appointment booking, and full nhà thuốc operations, live at tmpms.io.vn.",
+    tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Gemini AI", "Docker"],
     thumbnail: "/projects/tmpms.gif",
     caseStudyUrl: "/projects/tmpms",
   } satisfies FeaturedProject,
@@ -99,7 +98,7 @@ export const PORTFOLIO = {
       year: "2026",
       status: "live",
       description:
-        "Graduation project for FPT University — a production pharmacy platform combining traditional (Đông Y) and Western medicine: e-commerce, online diagnosis, appointment booking with deposits, and full nhà thuốc operations. Designed and built solo, live at tmpms.io.vn.",
+        "Graduation project for FPT University, a production pharmacy platform combining traditional (Đông Y) and Western medicine: e-commerce, online diagnosis, appointment booking with deposits, and full nhà thuốc operations. Designed and built solo, live at tmpms.io.vn.",
       highlights: [
         "ASP.NET Core 8 / EF Core backend on SQL Server",
         "Real-time pharmacist chat & AI (Gemini) via SignalR",
@@ -116,7 +115,7 @@ export const PORTFOLIO = {
       year: "2026",
       status: "live",
       description:
-        "Upload trip photos and it reconstructs the route from the GPS data embedded in them. Redesigned into a full app with Google sign-in, a dashboard (map view, gallery, stats), and social features — an Explore feed of public rides and a Community page — plus a Pro tier.",
+        "Upload trip photos and it reconstructs the route from the GPS data embedded in them. Redesigned into a full app with Google sign-in, a dashboard (map view, gallery, stats), social features (an Explore feed of public rides and a Community page), and a Pro tier.",
       highlights: [
         "GPS route reconstruction from photo EXIF data",
         "Google sign-in, dashboard & Pro tier",
@@ -174,7 +173,7 @@ export const PORTFOLIO = {
   events: [] as EventItem[],
 
   outside: {
-    blurb: "When I step away from the screen, I recharge through {{tags}} — it keeps my work fresh and my head clear.",
+    blurb: "When I step away from the screen, I recharge through {{tags}}, which keeps my work fresh and my head clear.",
     tags: ["traveling", "photography", "football", "gaming"],
   } satisfies OutsideData,
 

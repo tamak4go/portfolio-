@@ -40,7 +40,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="hidden text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-white sm:inline"
+              className="hidden text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white sm:inline"
             >
               {item.label}
             </Link>
@@ -50,7 +50,7 @@ export function Navbar() {
             <button
               onClick={() => setMenuOpen((v) => !v)}
               aria-label="Toggle navigation menu"
-              className="flex h-8 w-8 items-center justify-center rounded-full text-neutral-500 hover:text-neutral-900 dark:hover:text-white sm:hidden"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white sm:hidden"
             >
               {menuOpen ? <X size={16} /> : <Menu size={16} />}
             </button>
@@ -73,7 +73,7 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-lg px-2 py-2 text-sm text-neutral-500 hover:bg-black/5 hover:text-neutral-900 dark:hover:bg-white/5 dark:hover:text-white"
+                  className="rounded-lg px-2 py-2 text-sm text-neutral-500 hover:bg-black/5 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-white/5 dark:hover:text-white"
                 >
                   {item.label}
                 </Link>

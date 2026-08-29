@@ -18,7 +18,7 @@ export default function ProjectsPage() {
           <div className="mb-8">
             <Link
               href="/"
-              className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
             >
               <ChevronLeft size={14} /> Back to Home
             </Link>

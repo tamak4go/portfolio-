@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MessageCircle, X, Send } from "lucide-react";
 import { PORTFOLIO } from "@/lib/data";
@@ -20,19 +20,27 @@ function reply(msg: string): string {
   if (m.includes("stack") || m.includes("tech") || m.includes("language") || m.includes("use")) {
     return `I work across the full stack with React, Next.js, Vue.js, Node.js, MySQL, and MongoDB. I also have Java experience from my internship at FPT Software.`;
   }
-  if (m.includes("hire") || m.includes("job") || m.includes("internship") || m.includes("contact") || m.includes("email")) {
+  if (m.includes("experience") || m.includes("internship")) {
+    return `I interned as a Java Developer at FPT Software (Đà Nẵng, Jan 2025) — developed and maintained Java modules in a real enterprise environment, debugged and optimized code on large-scale systems, and worked in a professional Agile/Scrum team. I'm now looking for my first full-stack role after I graduate in Dec 2026.`;
+  }
+  if (m.includes("hire") || m.includes("job") || m.includes("contact") || m.includes("email")) {
     return `I am available for internships and junior full-stack developer roles! You can contact me at ng.tammail@gmail.com or call me at +84 862 544 627.`;
   }
   if (m.includes("resume") || m.includes("cv")) {
     return `You can view my resume using the "View Resume" button on the homepage — pick English or Tiếng Việt from the dropdown.`;
   }
-  return `Hi! I'm Tam's AI assistant. Ask me about my graduation project (TMPMS), my stack, my internship at FPT Software, or my contact info!`;
+  return `Hi! I'm Tam's site assistant. Ask me about my graduation project (TMPMS), my stack, my internship at FPT Software, or my contact info!`;
 }
 
 export function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([{ who: "bot", text: PORTFOLIO.chat.greeting }]);
   const [input, setInput] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+  }, [messages]);
 
   if (!PORTFOLIO.chat.enabled) return null;
 
@@ -54,9 +62,12 @@ export function ChatWidget() {
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ y: -2 }}
         transition={{ delay: 0.4 }}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-neutral-900 px-4 py-3 text-sm font-semibold text-white shadow-lg dark:bg-white dark:text-neutral-900"
+        aria-label={`Chat with ${PORTFOLIO.chat.botName}`}
+        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-900 text-white shadow-lg dark:bg-white dark:text-neutral-900 sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-3 sm:text-sm sm:font-semibold"
       >
-        <MessageCircle size={16} /> Chat with {PORTFOLIO.chat.botName}
+        <MessageCircle size={18} className="sm:hidden" />
+        <MessageCircle size={16} className="hidden sm:block" />
+        <span className="hidden sm:inline">Chat with {PORTFOLIO.chat.botName}</span>
       </motion.button>
 
       <AnimatePresence>
@@ -74,13 +85,13 @@ export function ChatWidget() {
                   {PORTFOLIO.avatarText}
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold">Chat with {PORTFOLIO.chat.botName}</h4>
-                  <div className="flex items-center gap-1 text-[11px] text-emerald-500">
+                  <h3 className="text-sm font-semibold">Chat with {PORTFOLIO.chat.botName}</h3>
+                  <div className="flex items-center gap-1 text-[11px] text-emerald-700 dark:text-emerald-400">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Online
                   </div>
                 </div>
               </div>
-              <button onClick={() => setOpen(false)} aria-label="Close chat" className="text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
+              <button onClick={() => setOpen(false)} aria-label="Close chat" className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
                 <X size={16} />
               </button>
             </div>
@@ -95,7 +106,7 @@ export function ChatWidget() {
                 >
                   <div className="h-6 w-6 shrink-0 overflow-hidden rounded-full border border-black/10 bg-neutral-100 dark:border-white/10 dark:bg-neutral-800 flex items-center justify-center text-xs">
                     {m.who === "bot" ? (
-                      <span className="font-bold text-[9px]">{PORTFOLIO.initials}</span>
+                      <span className="font-bold text-[11px]">{PORTFOLIO.initials}</span>
                     ) : (
                       <span className="text-[10px]">👤</span>
                     )}
@@ -111,6 +122,7 @@ export function ChatWidget() {
                   </div>
                 </div>
               ))}
+              <div ref={messagesEndRef} />
             </div>
 
             <div className="flex gap-2 border-t border-black/5 p-3 dark:border-white/5">
