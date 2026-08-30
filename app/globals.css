@@ -174,24 +174,6 @@ body {
   }
 }
 
-/* ---- Project thumbnail glitch preview on hover ---- */
-.thumb-glitch {
-  transition: filter 0.15s ease;
-}
-.group:hover .thumb-glitch {
-  animation: thumb-glitch-anim 0.5s steps(2, jump-none) infinite;
-}
-@keyframes thumb-glitch-anim {
-  0%, 100% {
-    clip-path: inset(0 0 0 0);
-    transform: scale(1.05) translate(0, 0);
-    filter: drop-shadow(3px 0 0 rgb(var(--accent) / 0.55)) drop-shadow(-3px 0 0 rgb(var(--accent-warm) / 0.55));
-  }
-  20% { clip-path: inset(10% 0 55% 0); transform: scale(1.05) translate(-3px, 0); }
-  40% { clip-path: inset(55% 0 10% 0); transform: scale(1.05) translate(3px, 0); }
-  60% { clip-path: inset(25% 0 35% 0); transform: scale(1.05) translate(-2px, 0); }
-  80% { clip-path: inset(0 0 0 0); transform: scale(1.05) translate(2px, 0); }
-}
 /* Not gated behind prefers-reduced-motion — same reasoning as the theme
    toggle above: this is a hover-triggered preview, not ambient/looping
    background motion, and the site owner wants to see it play. */
