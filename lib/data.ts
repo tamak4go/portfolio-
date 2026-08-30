@@ -87,7 +87,7 @@ export const PORTFOLIO = {
     description:
       "Traditional-medicine pharmacy management system: e-commerce, Đông Y diagnosis, appointment booking, and full nhà thuốc operations, live at tmpms.io.vn.",
     tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Gemini AI", "Docker"],
-    thumbnail: "/projects/tmpms.gif",
+    thumbnail: "/projects/tmpms.png",
     caseStudyUrl: "/projects/tmpms",
   } satisfies FeaturedProject,
 
@@ -105,7 +105,7 @@ export const PORTFOLIO = {
         "PayOS payments with idempotent webhooks",
       ],
       tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Docker"],
-      thumbnail: "/projects/tmpms.gif",
+      thumbnail: "/projects/tmpms.png",
       liveUrl: "https://tmpms.io.vn/",
       repoUrl: "https://github.com/tamak4go",
     },
@@ -122,7 +122,7 @@ export const PORTFOLIO = {
         "Explore feed & Community stats",
       ],
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL", "Vitest"],
-      thumbnail: "/projects/trackingtours.gif",
+      thumbnail: "/projects/trackingtours.png",
       liveUrl: "https://trackingtours.vercel.app",
       repoUrl: "https://github.com/tamak4go/trackingtours",
     },
