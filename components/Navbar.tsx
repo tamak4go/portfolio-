@@ -13,7 +13,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  const navItems = PORTFOLIO.nav.filter((item) => item.href !== "#writing" || PORTFOLIO.writing.length > 0);
+  const navItems = PORTFOLIO.nav;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
