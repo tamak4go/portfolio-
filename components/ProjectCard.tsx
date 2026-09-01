@@ -2,7 +2,8 @@
 
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, CheckCircle2 } from "lucide-react";
+import { ExternalLink, Github, CheckCircle2, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import type { Project } from "@/lib/data";
 import { BRAND_COLORS } from "@/lib/data";
 import { getTechIcon, getTechIconColor } from "@/lib/tech-icons";
@@ -89,7 +90,7 @@ export function ProjectCard({ project }: { project: Project }) {
             })}
           </div>
         )}
-        {(project.liveUrl || project.repoUrl) && (
+        {(project.liveUrl || project.repoUrl || project.caseStudyUrl) && (
           <div className="mt-3 flex items-center gap-4 border-t border-black/5 pt-3 text-xs font-semibold dark:border-white/5">
             {project.liveUrl && (
               <a
@@ -111,6 +112,15 @@ export function ProjectCard({ project }: { project: Project }) {
               >
                 <Github size={12} /> Repo
               </a>
+            )}
+            {project.caseStudyUrl && (
+              <Link
+                href={project.caseStudyUrl}
+                className="group/link ml-auto inline-flex items-center gap-1 uppercase tracking-wide text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+              >
+                Case study
+                <ArrowUpRight size={12} className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+              </Link>
             )}
           </div>
         )}

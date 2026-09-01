@@ -11,7 +11,7 @@ export function GithubActivity() {
   return (
     <section className="border-t border-black/10 py-14 dark:border-white/10">
       <Reveal>
-        <h2 className="mb-6 text-xl font-semibold tracking-tight">GitHub Activity</h2>
+        <h2 className="mb-6 text-2xl font-semibold tracking-tight">GitHub Activity</h2>
         <div className="mask-fade-x overflow-x-auto rounded-xl border border-black/10 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-surface">
           {failed ? (
             <p className="text-sm text-neutral-500 dark:text-neutral-400">

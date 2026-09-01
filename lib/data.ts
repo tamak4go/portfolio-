@@ -15,6 +15,7 @@ export interface Project {
   thumbnail?: string;
   liveUrl?: string;
   repoUrl?: string;
+  caseStudyUrl?: string;
 }
 
 export interface FeaturedProject {
@@ -125,6 +126,7 @@ export const PORTFOLIO = {
       thumbnail: "/projects/trackingtours.png",
       liveUrl: "https://trackingtours.vercel.app",
       repoUrl: "https://github.com/tamak4go/trackingtours",
+      caseStudyUrl: "/projects/tracking-phuot",
     },
     {
       title: "Next Build",

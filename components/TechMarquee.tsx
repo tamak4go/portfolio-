@@ -22,7 +22,7 @@ export function TechMarquee() {
     <section id="technologies" className="py-14">
       <Reveal>
         <div className="mb-6 flex items-baseline justify-between">
-          <h2 className="text-xl font-semibold tracking-tight">Technologies</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Technologies</h2>
         </div>
         <div className="mask-fade-x flex flex-col gap-3">
           {PORTFOLIO.technologies.map((row, i) => (

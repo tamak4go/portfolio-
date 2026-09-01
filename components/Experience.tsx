@@ -7,7 +7,7 @@ export function Experience() {
     <section id="experience" className="border-t border-black/10 py-14 dark:border-white/10">
       <Reveal>
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold tracking-tight">Experience</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Experience</h2>
           <Link href="/experience" className="text-xs font-semibold text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white">
             View Details &rsaquo;
           </Link>
@@ -36,7 +36,7 @@ export function Experience() {
           ))}
         </div>
 
-        <h2 className="mb-6 mt-12 text-xl font-semibold tracking-tight">Education</h2>
+        <h2 className="mb-6 mt-12 text-2xl font-semibold tracking-tight">Education</h2>
         <div className="flex flex-col">
           {PORTFOLIO.education.map((e, i) => (
             <div

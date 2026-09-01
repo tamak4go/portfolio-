@@ -21,7 +21,7 @@ export function Outside() {
   return (
     <section id="outside" className="border-t border-black/10 py-14 dark:border-white/10">
       <Reveal>
-        <h2 className="mb-6 text-xl font-semibold tracking-tight">Outside the IDE</h2>
+        <h2 className="mb-6 text-2xl font-semibold tracking-tight">Outside the IDE</h2>
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex-1 space-y-4">
             <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">

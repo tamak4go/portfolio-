@@ -7,10 +7,12 @@ import { ThemeToggle } from "./ThemeToggle";
 import { Avatar } from "./Avatar";
 import { PORTFOLIO } from "@/lib/data";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
   const navItems = PORTFOLIO.nav.filter((item) => item.href !== "#writing" || PORTFOLIO.writing.length > 0);
 
   useEffect(() => {
@@ -30,7 +32,7 @@ export function Navbar() {
           : "border-transparent bg-white/0 dark:bg-ink/0"
       }`}
     >
-      <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2 text-sm font-bold tracking-tight">
           <Avatar size={24} />
           {PORTFOLIO.initials}
@@ -40,7 +42,12 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="hidden text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white sm:inline"
+              aria-current={pathname === item.href ? "page" : undefined}
+              className={`hidden transition-colors sm:inline ${
+                pathname === item.href
+                  ? "font-semibold text-neutral-900 dark:text-white"
+                  : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+              }`}
             >
               {item.label}
             </Link>
@@ -73,7 +80,12 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-lg px-2 py-2 text-sm text-neutral-500 hover:bg-black/5 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-white/5 dark:hover:text-white"
+                  aria-current={pathname === item.href ? "page" : undefined}
+                  className={`rounded-lg px-2 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/5 ${
+                    pathname === item.href
+                      ? "font-semibold text-neutral-900 dark:text-white"
+                      : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+                  }`}
                 >
                   {item.label}
                 </Link>

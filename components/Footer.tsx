@@ -14,7 +14,7 @@ export function Footer() {
   return (
     <footer id="contact" className="border-t border-black/10 py-14 dark:border-white/10">
       <Reveal>
-        <h2 className="text-xl font-semibold tracking-tight">Let&apos;s work together</h2>
+        <h2 className="text-2xl font-semibold tracking-tight">Let&apos;s work together</h2>
         <p className="mt-3 max-w-lg text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">{contact.blurb}</p>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2">

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Github, Linkedin, Mail, Twitter, ArrowRight, BadgeCheck, ChevronDown } from "lucide-react";
+import Link from "next/link";
 import { PORTFOLIO } from "@/lib/data";
 import { Avatar } from "./Avatar";
 
@@ -46,28 +47,28 @@ export function Hero() {
   ].filter(Boolean) as { href: string; icon: typeof Github; label: string }[];
 
   return (
-    <section id="about" className="relative pt-20 pb-4 sm:pt-28">
+    <section id="about" className="relative pt-16 pb-6 sm:pt-24">
       <div className="hero-blob hero-blob-a -left-16 top-0 h-64 w-64 bg-[rgb(var(--accent))]/50 dark:bg-[rgb(var(--accent))]/40" />
       <div className="hero-blob hero-blob-b -right-10 top-16 h-64 w-64 bg-[rgb(var(--accent-warm))]/40 dark:bg-[rgb(var(--accent-warm))]/35" />
 
-      <motion.div {...fadeUp(0)} className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:text-left">
-        <Avatar size={96} fancy />
+      <motion.div {...fadeUp(0)} className="flex flex-col items-center gap-5 text-center sm:flex-row sm:items-center sm:text-left">
+        <Avatar size={112} fancy />
 
         <div>
           <motion.h1
             variants={nameContainer}
             initial="hidden"
             animate="visible"
-            className="glitch-text cursor-default text-3xl font-semibold tracking-tight sm:text-4xl"
+            className="glitch-text cursor-default text-4xl font-semibold leading-none tracking-tight sm:text-5xl lg:text-6xl"
           >
             {nameWords.map((word, i) => (
               <motion.span key={i} variants={nameWord} className="mr-[0.25em] inline-block last:mr-0">
                 {word}
               </motion.span>
             ))}
-            <BadgeCheck size={20} className="ml-1.5 inline-block align-middle fill-sky-500 text-white dark:text-neutral-950" />
+            <BadgeCheck size={22} className="ml-1.5 inline-block align-middle fill-sky-500 text-white dark:text-neutral-950" />
           </motion.h1>
-          <div className="mt-3 flex items-center justify-center gap-1.5 sm:justify-start">
+          <div className="mt-3.5 flex items-center justify-center gap-1.5 sm:justify-start">
             {links.map(({ href, icon: Icon, label }) => (
               <a
                 key={label}
@@ -86,7 +87,7 @@ export function Hero() {
 
       <motion.div
         {...fadeUp(0.1)}
-        className="mt-6 flex items-center justify-center gap-2 text-xs font-medium text-emerald-700 dark:text-emerald-400 sm:justify-start"
+        className="mt-7 flex items-center justify-center gap-2 text-xs font-medium text-emerald-700 dark:text-emerald-400 sm:justify-start"
       >
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -95,24 +96,34 @@ export function Hero() {
         {PORTFOLIO.status}
       </motion.div>
 
-      <motion.p {...fadeUp(0.16)} className="mt-3 text-center text-lg text-neutral-500 dark:text-neutral-400 sm:text-left">
-        {PORTFOLIO.role} <span className="text-neutral-500 dark:text-neutral-400">— {PORTFOLIO.roleTagline}</span>
+      <motion.p {...fadeUp(0.16)} className="mt-3 text-center text-xl font-medium text-neutral-900 dark:text-white sm:text-left sm:text-2xl">
+        {PORTFOLIO.role}
+        <span className="block text-base font-normal text-neutral-500 dark:text-neutral-400 sm:inline sm:text-lg">
+          {" "}{PORTFOLIO.roleTagline}
+        </span>
       </motion.p>
 
       <motion.p {...fadeUp(0.22)} className="mx-auto mt-5 max-w-xl text-center text-[15px] leading-relaxed text-neutral-500 dark:text-neutral-400 sm:mx-0 sm:text-left">
         {PORTFOLIO.bio}
       </motion.p>
 
-      <motion.div {...fadeUp(0.28)} className="relative mt-6 flex items-center justify-center sm:justify-start" ref={resumeMenuRef}>
+      <motion.div {...fadeUp(0.28)} className="relative mt-7 flex flex-wrap items-center justify-center gap-3 sm:justify-start" ref={resumeMenuRef}>
         <button
           type="button"
           onClick={() => setResumeMenuOpen((v) => !v)}
           aria-haspopup="menu"
           aria-expanded={resumeMenuOpen}
-          className="inline-flex items-center gap-1.5 rounded-lg bg-neutral-900 px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-85 dark:bg-white dark:text-neutral-900"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-transform duration-150 hover:opacity-85 active:scale-[0.98] dark:bg-white dark:text-neutral-900"
         >
           View Resume <ChevronDown size={14} className={`transition-transform ${resumeMenuOpen ? "rotate-180" : ""}`} />
         </button>
+
+        <Link
+          href="/projects"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-black/10 px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-transform duration-150 hover:border-black/20 active:scale-[0.98] dark:border-white/15 dark:text-neutral-200 dark:hover:border-white/25"
+        >
+          View Projects <ArrowRight size={14} />
+        </Link>
 
         <AnimatePresence>
           {resumeMenuOpen && (

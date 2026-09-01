@@ -15,7 +15,7 @@ export function Projects() {
   return (
     <section id="projects" className="border-t border-black/10 py-14 dark:border-white/10">
       <Reveal>
-        <h2 className="mb-6 text-xl font-semibold tracking-tight">Projects</h2>
+        <h2 className="mb-6 text-2xl font-semibold tracking-tight">Projects</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {otherProjects.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.06}>
