@@ -32,7 +32,7 @@ export function TrackingPhuotView() {
             </span>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Tracking Phượt: routes rebuilt from your photos.</h1>
             <p className="text-base leading-relaxed text-neutral-500 dark:text-neutral-400">
-              Upload trip photos and it reconstructs the full route from the GPS data embedded in their EXIF metadata — no manual tracking, no separate GPS app. Solo-built and live at{" "}
+              Upload trip photos and it reconstructs the full route from the GPS data embedded in their EXIF metadata, no manual tracking or separate GPS app needed. Solo-built and live at{" "}
               <a href="https://trackingtours.vercel.app" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-neutral-900 dark:hover:text-white">
                 trackingtours.vercel.app
               </a>.
@@ -46,13 +46,16 @@ export function TrackingPhuotView() {
             </p>
           </div>
 
-          {/* Large project gif */}
+          {/* Large project demo clip */}
           <div className="my-8 overflow-hidden rounded-2xl border border-black/10 dark:border-white/10">
-            <img
-              src="/projects/trackingtours.gif"
-              alt="Tracking Phượt route map"
+            <video
+              src="/projects/trackingtours.mp4"
+              aria-label="Tracking Phượt route map walkthrough"
               className="w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
-              loading="lazy"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
           </div>
 
@@ -63,7 +66,7 @@ export function TrackingPhuotView() {
               <div className="rounded-xl border border-black/5 p-5 dark:border-white/5 dark:bg-surface">
                 <h3 className="font-semibold text-base mb-1.5">GPS Route Reconstruction</h3>
                 <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  Reads GPS coordinates and timestamps from photo EXIF data and stitches them into a chronological route, rendered on an interactive map — no manual pin-dropping.
+                  Reads GPS coordinates and timestamps from photo EXIF data and stitches them into a chronological route, rendered on an interactive map with no manual pin-dropping.
                 </p>
               </div>
               <div className="rounded-xl border border-black/5 p-5 dark:border-white/5 dark:bg-surface">
@@ -75,13 +78,13 @@ export function TrackingPhuotView() {
               <div className="rounded-xl border border-black/5 p-5 dark:border-white/5 dark:bg-surface">
                 <h3 className="font-semibold text-base mb-1.5">Explore &amp; Community</h3>
                 <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  An Explore feed surfaces public rides from other users, and a Community page rounds up shared stats — turning a solo tool into a social one.
+                  An Explore feed surfaces public rides from other users, and a Community page rounds up shared stats, turning a solo tool into a social one.
                 </p>
               </div>
               <div className="rounded-xl border border-black/5 p-5 dark:border-white/5 dark:bg-surface">
                 <h3 className="font-semibold text-base mb-1.5">Pro Tier</h3>
                 <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  A paid Pro tier sits on top of the free feature set, laying the groundwork for the app's monetization path.
+                  A paid Pro tier sits on top of the free feature set, laying the groundwork for the app&apos;s monetization path.
                 </p>
               </div>
             </div>

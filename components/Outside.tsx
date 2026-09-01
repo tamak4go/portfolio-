@@ -1,15 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { PORTFOLIO } from "@/lib/data";
+import { useMounted } from "@/lib/useMounted";
 import { Reveal } from "./Reveal";
 
 export function Outside() {
   const { outside } = PORTFOLIO;
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useMounted();
   // Same pre-mount fallback as Avatar — defaults dark until the theme resolves.
   const isDark = !mounted || resolvedTheme !== "light";
 

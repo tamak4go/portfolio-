@@ -3,13 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { PORTFOLIO } from "@/lib/data";
+import { useMounted } from "@/lib/useMounted";
 
 export function Avatar({ size = 72, fancy = false }: { size?: number; fancy?: boolean }) {
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useMounted();
 
   // Before mount we don't know the resolved theme yet (avoids a
   // server/client hydration mismatch) — default to the dark variant since

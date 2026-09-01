@@ -13,8 +13,8 @@ const BASE_URL = "https://tamagok4.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: `${PORTFOLIO.name} — ${PORTFOLIO.role}`,
-    template: `%s — ${PORTFOLIO.name}`,
+    default: `${PORTFOLIO.name} - ${PORTFOLIO.role}`,
+    template: `%s - ${PORTFOLIO.name}`,
   },
   description: PORTFOLIO.bio,
   keywords: ["Trịnh Quang Tâm", "Full-Stack Developer", "React", "Next.js", "Node.js", "ASP.NET Core", "Portfolio"],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   creator: PORTFOLIO.name,
   alternates: { canonical: "/" },
   openGraph: {
-    title: `${PORTFOLIO.name} — ${PORTFOLIO.role}`,
+    title: `${PORTFOLIO.name} - ${PORTFOLIO.role}`,
     description: PORTFOLIO.bio,
     url: BASE_URL,
     siteName: PORTFOLIO.name,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${PORTFOLIO.name} — ${PORTFOLIO.role}`,
+    title: `${PORTFOLIO.name} - ${PORTFOLIO.role}`,
     description: PORTFOLIO.bio,
   },
 };

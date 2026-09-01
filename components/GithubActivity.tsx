@@ -15,7 +15,7 @@ export function GithubActivity() {
         <div className="mask-fade-x overflow-x-auto rounded-xl border border-black/10 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-surface">
           {failed ? (
             <p className="text-sm text-neutral-500 dark:text-neutral-400">
-              Contribution graph is temporarily unavailable — see the live activity on{" "}
+              Contribution graph is temporarily unavailable. See the live activity on{" "}
               <a
                 href={`https://github.com/${PORTFOLIO.githubUsername}`}
                 target="_blank"

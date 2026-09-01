@@ -24,7 +24,7 @@ export function ProjectsView() {
             </Link>
             <h1 className="mt-4 text-3xl font-bold tracking-tight">Selected Projects</h1>
             <p className="mt-2 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-              A collection of web applications and systems I&apos;ve designed, built, and deployed — spanning frontend, backend, and full-stack development.
+              A collection of web applications and systems I&apos;ve designed, built, and deployed, spanning frontend, backend, and full-stack development.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">

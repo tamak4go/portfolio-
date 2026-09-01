@@ -108,7 +108,7 @@ export const PORTFOLIO = {
       tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Docker"],
       thumbnail: "/projects/tmpms.png",
       liveUrl: "https://tmpms.io.vn/",
-      repoUrl: "https://github.com/tamak4go",
+      repoUrl: "https://github.com/TMPMS/TMPMS",
     },
     {
       title: "Tracking Phượt",
@@ -190,7 +190,7 @@ export const PORTFOLIO = {
   chat: {
     enabled: true,
     botName: "Tam",
-    greeting: "Hey! I'm Tam — ask me about TMPMS, my stack, or anything else on this site.",
+    greeting: "Hey! I'm Tam. Ask me about TMPMS, my stack, or anything else on this site.",
   },
 };
 

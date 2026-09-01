@@ -39,7 +39,7 @@ export default function OpengraphImage() {
           {PORTFOLIO.name}
         </div>
         <div style={{ display: "flex", fontSize: 32, color: "rgba(255,255,255,0.6)", marginTop: 16 }}>
-          {PORTFOLIO.role} — {PORTFOLIO.roleTagline}
+          {PORTFOLIO.role} - {PORTFOLIO.roleTagline}
         </div>
         <div style={{ display: "flex", fontSize: 24, color: "rgba(255,255,255,0.4)", marginTop: 32 }}>
           {PORTFOLIO.status}

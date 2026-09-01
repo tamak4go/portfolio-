@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ChatWidget } from "@/components/ChatWidget";
 import { Reveal } from "@/components/Reveal";
-import { PORTFOLIO, BRAND_COLORS } from "@/lib/data";
+import { BRAND_COLORS } from "@/lib/data";
 import { getTechIcon, getTechIconColor } from "@/lib/tech-icons";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
@@ -46,13 +46,16 @@ export function TmpmsView() {
             </p>
           </div>
 
-          {/* Large project gif */}
+          {/* Large project demo clip */}
           <div className="my-8 overflow-hidden rounded-2xl border border-black/10 dark:border-white/10">
-            <img
-              src="/projects/tmpms.gif"
-              alt="TMPMS storefront"
+            <video
+              src="/projects/tmpms.mp4"
+              aria-label="TMPMS storefront walkthrough"
               className="w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
-              loading="lazy"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
           </div>
 
@@ -110,7 +113,7 @@ export function TmpmsView() {
               })}
             </div>
             <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400 mt-4">
-              Layered ASP.NET Core 8 / EF Core backend on SQL Server with JWT + Identity auth; React 19 + Vite frontend; SignalR for real-time chat backed by Gemini AI; PayOS for payments; deployed via Docker to a VPS behind a reverse proxy — covering everything from requirements analysis and database design to API development, UI implementation, and production deployment, solo.
+              Layered ASP.NET Core 8 / EF Core backend on SQL Server with JWT + Identity auth; React 19 + Vite frontend; SignalR for real-time chat backed by Gemini AI; PayOS for payments; deployed via Docker to a VPS behind a reverse proxy. Covers everything from requirements analysis and database design to API development, UI implementation, and production deployment, solo.
             </p>
           </div>
         </Reveal>

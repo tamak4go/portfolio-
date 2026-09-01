@@ -17,36 +17,42 @@ const SUGGESTIONS = [
   "Are you available for hire?",
 ];
 
+// Module scope, not component scope — keeps the impure Math.random() call
+// out of render's purity analysis.
+function replyDelay(): number {
+  return 500 + Math.random() * 400;
+}
+
 // Simple keyword-matched canned responses — no API key required. Swap
 // `reply()` for a real API call when you're ready to wire up a live model.
 function reply(msg: string): string {
   const m = msg.toLowerCase();
 
   if (/\b(hi|hello|hey|yo|chào|xin chào)\b/.test(m)) {
-    return `Hey there! I'm ${PORTFOLIO.chat.botName} — ask me about TMPMS, Tracking Phượt, my stack, or how to reach ${PORTFOLIO.name.split(" ").pop()}.`;
+    return `Hey there! I'm ${PORTFOLIO.chat.botName}. Ask me about TMPMS, Tracking Phượt, my stack, or how to reach ${PORTFOLIO.name.split(" ").pop()}.`;
   }
   if (/\b(thanks|thank you|thx|cảm ơn|cam on)\b/.test(m)) {
-    return `You're welcome! Anything else you'd like to know — projects, stack, or how to get in touch?`;
+    return `You're welcome! Anything else you'd like to know: projects, stack, or how to get in touch?`;
   }
 
   if (m.includes("tmpms") || m.includes("pharmacy") || m.includes("đông y") || m.includes("dong y")) {
-    return `TMPMS is a production traditional-and-Western-medicine pharmacy platform, live at tmpms.io.vn — e-commerce, Đông Y diagnosis, appointment booking with deposits, real-time pharmacist chat over SignalR, a Gemini-AI chatbot, and PayOS payments with idempotent webhooks. Built solo on ASP.NET Core 8 / EF Core + SQL Server, React frontend, deployed with Docker. Full breakdown on the /projects/tmpms case study page.`;
+    return `TMPMS is a production traditional-and-Western-medicine pharmacy platform, live at tmpms.io.vn: e-commerce, Đông Y diagnosis, appointment booking with deposits, real-time pharmacist chat over SignalR, a Gemini-AI chatbot, and PayOS payments with idempotent webhooks. Built solo on ASP.NET Core 8 / EF Core + SQL Server, React frontend, deployed with Docker. Full breakdown on the /projects/tmpms case study page.`;
   }
   if (m.includes("tracking") || m.includes("phượt") || m.includes("phuot") || m.includes("gps") || m.includes("exif")) {
-    return `Tracking Phượt reconstructs a trip's route from the GPS data embedded in your photos' EXIF metadata — no manual tracking needed. It's grown into a full app with Google sign-in, a dashboard (map view, gallery, stats), an Explore feed of public rides, a Community page, and a Pro tier. Built with Next.js, TypeScript, Supabase, and MapLibre GL — live at trackingtours.vercel.app, and there's a case study at /projects/tracking-phuot.`;
+    return `Tracking Phượt reconstructs a trip's route from the GPS data embedded in your photos' EXIF metadata, no manual tracking needed. It's grown into a full app with Google sign-in, a dashboard (map view, gallery, stats), an Explore feed of public rides, a Community page, and a Pro tier. Built with Next.js, TypeScript, Supabase, and MapLibre GL, live at trackingtours.vercel.app, and there's a case study at /projects/tracking-phuot.`;
   }
   if (m.includes("project") || m.includes("work") || m.includes("portfolio") || m.includes("dự án")) {
     return `My two main builds: TMPMS, a production pharmacy platform (e-commerce, Đông Y diagnosis, appointment booking) built solo on ASP.NET Core + React, live at tmpms.io.vn; and Tracking Phượt, which reconstructs GPS routes from trip photos, live at trackingtours.vercel.app. Ask me about either one, or check the /projects page.`;
   }
 
   if (m.includes("react") || m.includes("next")) {
-    return `I build with React and Next.js for the frontend — this site and Tracking Phượt are both Next.js (App Router, TypeScript, Tailwind). TMPMS's frontend is React + Vite.`;
+    return `I build with React and Next.js for the frontend: this site and Tracking Phượt are both Next.js (App Router, TypeScript, Tailwind). TMPMS's frontend is React + Vite.`;
   }
   if (m.includes("asp.net") || m.includes("aspnet") || m.includes(".net") || m.includes("c#")) {
-    return `TMPMS's backend is ASP.NET Core 8 with EF Core on SQL Server — layered architecture, JWT + Identity auth, SignalR for real-time features, deployed with Docker.`;
+    return `TMPMS's backend is ASP.NET Core 8 with EF Core on SQL Server: layered architecture, JWT + Identity auth, SignalR for real-time features, deployed with Docker.`;
   }
   if (m.includes("java")) {
-    return `I used Java professionally during my internship at FPT Software (Đà Nẵng, Jan 2025) — developing and maintaining application modules in a real enterprise environment.`;
+    return `I used Java professionally during my internship at FPT Software (Đà Nẵng, Jan 2025), developing and maintaining application modules in a real enterprise environment.`;
   }
   if (m.includes("database") || m.includes("sql") || m.includes("mongo") || m.includes("mysql")) {
     return `TMPMS runs on SQL Server via EF Core, with Serializable transaction isolation to prevent booking conflicts. I've also worked with MySQL and MongoDB.`;
@@ -56,20 +62,20 @@ function reply(msg: string): string {
   }
 
   if (m.includes("experience") || m.includes("internship") || m.includes("fpt software")) {
-    return `I interned as a Java Developer at FPT Software (Đà Nẵng, Jan 2025) — developed and maintained Java modules in a real enterprise environment, debugged and optimized code on large-scale systems, and worked in a professional Agile/Scrum team. I'm now looking for my first full-stack role after I graduate in Dec 2026.`;
+    return `I interned as a Java Developer at FPT Software (Đà Nẵng, Jan 2025), where I developed and maintained Java modules in a real enterprise environment, debugged and optimized code on large-scale systems, and worked in a professional Agile/Scrum team. I'm now looking for my first full-stack role after I graduate in Dec 2026.`;
   }
   if (m.includes("education") || m.includes("university") || m.includes("degree") || m.includes("study") || m.includes("học")) {
     return `I'm a final-year Information Technology student at FPT University, Đà Nẵng, expected to graduate in Dec 2026.`;
   }
 
   if (m.includes("hire") || m.includes("job") || m.includes("available") || m.includes("opportunity")) {
-    return `Yes — I'm available for internships and fresher full-stack developer roles starting after graduation in Dec 2026. Reach out at ${PORTFOLIO.socials.email} or ${PORTFOLIO.contact.phone}.`;
+    return `Yes! I'm available for internships and fresher full-stack developer roles starting after graduation in Dec 2026. Reach out at ${PORTFOLIO.socials.email} or ${PORTFOLIO.contact.phone}.`;
   }
   if (m.includes("contact") || m.includes("email") || m.includes("phone") || m.includes("reach")) {
     return `You can reach me at ${PORTFOLIO.socials.email} or ${PORTFOLIO.contact.phone}. My GitHub and LinkedIn are linked in the footer too.`;
   }
   if (m.includes("resume") || m.includes("cv")) {
-    return `You can view my resume using the "View Resume" button on the homepage — pick English or Tiếng Việt from the dropdown.`;
+    return `You can view my resume using the "View Resume" button on the homepage, then pick English or Tiếng Việt from the dropdown.`;
   }
   if (m.includes("who are you") || m.includes("about you") || m.includes("yourself")) {
     return PORTFOLIO.bio;
@@ -100,7 +106,7 @@ export function ChatWidget() {
     setTimeout(() => {
       setTyping(false);
       setMessages((m) => [...m, { who: "bot", text: reply(val) }]);
-    }, 500 + Math.random() * 400);
+    }, replyDelay());
   }
 
   return (

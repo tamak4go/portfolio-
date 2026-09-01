@@ -5,6 +5,7 @@
  * ============================================================
  */
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- global consumed by main.js via <script> tag, not a module import
 const PORTFOLIO = {
   // ---- Identity ----
   initials: "TQT",              // shown in the top-left logo mark

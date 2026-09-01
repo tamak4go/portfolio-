@@ -4,7 +4,7 @@ import { ProjectsView } from "./ProjectsView";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: `Selected web applications and systems built by ${PORTFOLIO.name} — spanning frontend, backend, and full-stack development.`,
+  description: `Selected web applications and systems built by ${PORTFOLIO.name}, spanning frontend, backend, and full-stack development.`,
   alternates: { canonical: "/projects" },
 };
 

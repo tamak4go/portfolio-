@@ -3,7 +3,7 @@ import { PORTFOLIO } from "@/lib/data";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${PORTFOLIO.name} — ${PORTFOLIO.role}`,
+    name: `${PORTFOLIO.name} - ${PORTFOLIO.role}`,
     short_name: PORTFOLIO.initials,
     description: PORTFOLIO.bio,
     start_url: "/",

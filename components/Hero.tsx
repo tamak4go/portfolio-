@@ -119,7 +119,7 @@ export function Hero() {
         </button>
 
         <Link
-          href="/projects"
+          href="#projects"
           className="inline-flex items-center gap-1.5 rounded-lg border border-black/10 px-5 py-2.5 text-sm font-semibold text-neutral-700 transition-transform duration-150 hover:border-black/20 active:scale-[0.98] dark:border-white/15 dark:text-neutral-200 dark:hover:border-white/25"
         >
           View Projects <ArrowRight size={14} />

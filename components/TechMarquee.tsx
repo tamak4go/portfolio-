@@ -8,6 +8,9 @@ function Pill({ tech }: { tech: string }) {
   return (
     <span className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg border border-dashed border-black/15 bg-white px-3.5 py-1.5 font-mono text-sm text-neutral-700 shadow-sm dark:border-white/15 dark:bg-surface dark:text-neutral-200">
       {Icon ? (
+        // Icon is a stable reference from TECH_ICONS, a static lookup table,
+        // not a component newly created on this render.
+        // eslint-disable-next-line react-hooks/static-components
         <Icon size={15} className="shrink-0" style={{ color: getTechIconColor(color) }} />
       ) : (
         color && <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: color }} />

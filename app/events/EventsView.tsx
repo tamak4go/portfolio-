@@ -31,7 +31,7 @@ export function EventsView() {
 
           {events.length === 0 ? (
             <p className="mt-6 text-sm text-neutral-500 dark:text-neutral-400">
-              Nothing here yet — check back soon.
+              Nothing here yet. Check back soon.
             </p>
           ) : (
             <div className="flex flex-col mt-6">

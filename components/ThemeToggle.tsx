@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { flushSync } from "react-dom";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
+import { useMounted } from "@/lib/useMounted";
 
 type DocumentWithViewTransition = Document & {
   startViewTransition?: (callback: () => void) => void;
@@ -15,9 +15,7 @@ export function ThemeToggle() {
   // icon wrong and the click handler always set "dark" (a no-op) instead of
   // correctly flipping away from whatever the system preference resolved to.
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
+  const mounted = useMounted();
 
   if (!mounted) return <div className="h-8 w-8" />;
 

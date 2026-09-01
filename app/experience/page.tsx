@@ -4,7 +4,7 @@ import { ExperienceView } from "./ExperienceView";
 
 export const metadata: Metadata = {
   title: "Experience",
-  description: `Work experience and education for ${PORTFOLIO.name} — ${PORTFOLIO.role}.`,
+  description: `Work experience and education for ${PORTFOLIO.name}, ${PORTFOLIO.role}.`,
   alternates: { canonical: "/experience" },
 };
 
