@@ -15,6 +15,7 @@
 - Đã tích hợp đồng bộ vào `FeaturedProject.tsx`, `ProjectCard.tsx`, trang case study `TmpmsView.tsx`, `TrackingPhuotView.tsx`, và dữ liệu `lib/data.ts` cùng `static-version/js/data.js`.
 - Cập nhật `.gitignore` cho phép push video `!public/videos/*.mp4`.
 - Kiểm thử build production (`npm run build`) thành công 100% không có bất kỳ lỗi nào.
+- **Đã commit và push toàn bộ lên remote GitHub:** `https://github.com/tamak4go/portfolio-.git` (Commit: `34ec13a`, Branch: `main`).
 
 ---
 
