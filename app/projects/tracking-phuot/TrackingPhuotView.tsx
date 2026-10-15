@@ -7,7 +7,9 @@ import { Reveal } from "@/components/Reveal";
 import { BRAND_COLORS } from "@/lib/data";
 import { getTechIcon, getTechIconColor } from "@/lib/tech-icons";
 import { ChevronLeft } from "lucide-react";
+import { SiYoutube } from "react-icons/si";
 import Link from "next/link";
+import { VideoPreview } from "@/components/VideoPreview";
 
 export function TrackingPhuotView() {
   const techStack = ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL", "Vitest"];
@@ -40,22 +42,28 @@ export function TrackingPhuotView() {
           </div>
 
           {/* Highlight note box */}
-          <div className="my-6 rounded-xl border border-black/5 bg-black/5 p-4 dark:border-white/5 dark:bg-white/5">
+          <div className="my-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-black/5 bg-black/5 p-4 dark:border-white/5 dark:bg-white/5">
             <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
               <strong className="text-neutral-900 dark:text-white">Note:</strong> Started as a single-purpose EXIF-to-route tool, then redesigned into a full app with accounts, a dashboard, and social features.
             </p>
+            <a
+              href="https://youtu.be/56dwJ55X3eY"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-red-500/20 bg-red-500/10 px-3 py-1.5 text-xs font-semibold text-red-600 transition-colors hover:bg-red-500/20 dark:text-red-400"
+            >
+              <SiYoutube size={14} /> Watch on YouTube
+            </a>
           </div>
 
           {/* Large project demo clip */}
           <div className="my-8 overflow-hidden rounded-2xl border border-black/10 dark:border-white/10">
-            <video
-              src="/projects/trackingtours.mp4"
-              aria-label="Tracking Phượt route map walkthrough"
-              className="w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
-              autoPlay
-              loop
-              muted
-              playsInline
+            <VideoPreview
+              src="/videos/tracking-phuot.mp4"
+              poster="/projects/trackingtours.png"
+              title="Tracking Phượt route map walkthrough"
+              badgeLabel="GPS Map Demo"
+              className="w-full aspect-video"
             />
           </div>
 

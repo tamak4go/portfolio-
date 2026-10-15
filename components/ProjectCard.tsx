@@ -3,10 +3,12 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, CheckCircle2, ArrowUpRight } from "lucide-react";
+import { SiYoutube } from "react-icons/si";
 import Link from "next/link";
 import type { Project } from "@/lib/data";
 import { BRAND_COLORS } from "@/lib/data";
 import { getTechIcon, getTechIconColor } from "@/lib/tech-icons";
+import { VideoPreview } from "./VideoPreview";
 
 const STATUS_LABEL: Record<Project["status"], string> = {
   live: "Live",
@@ -39,12 +41,13 @@ export function ProjectCard({ project }: { project: Project }) {
       transition={{ duration: 0.2 }}
       className="spotlight-card group relative flex flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-surface"
     >
-      <div
-        className="flex h-36 items-center justify-center bg-gradient-to-br from-neutral-100 to-neutral-200 bg-cover bg-center text-xs font-bold uppercase tracking-wider text-neutral-400 dark:from-neutral-900 dark:to-black"
-        style={project.thumbnail ? { backgroundImage: `url(${project.thumbnail})` } : undefined}
-      >
-        {!project.thumbnail && project.title}
-      </div>
+      <VideoPreview
+        src={project.video}
+        poster={project.thumbnail}
+        title={project.title}
+        badgeLabel="Demo"
+        className="h-44 w-full"
+      />
       <div className="relative flex flex-1 flex-col gap-2 p-5">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -90,8 +93,8 @@ export function ProjectCard({ project }: { project: Project }) {
             })}
           </div>
         )}
-        {(project.liveUrl || project.repoUrl || project.caseStudyUrl) && (
-          <div className="mt-3 flex items-center gap-4 border-t border-black/5 pt-3 text-xs font-semibold dark:border-white/5">
+        {(project.liveUrl || project.repoUrl || project.youtubeUrl || project.caseStudyUrl) && (
+          <div className="mt-3 flex flex-wrap items-center gap-3 border-t border-black/5 pt-3 text-xs font-semibold dark:border-white/5">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
@@ -111,6 +114,16 @@ export function ProjectCard({ project }: { project: Project }) {
                 className="group/link inline-flex items-center gap-1 text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
               >
                 <Github size={12} /> Repo
+              </a>
+            )}
+            {project.youtubeUrl && (
+              <a
+                href={project.youtubeUrl}
+                target="_blank"
+                rel="noopener"
+                className="group/link inline-flex items-center gap-1 text-red-600 transition-colors hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
+              >
+                <SiYoutube size={12} /> YouTube
               </a>
             )}
             {project.caseStudyUrl && (

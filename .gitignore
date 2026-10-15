@@ -5,6 +5,7 @@ out
 npm-debug.log*
 *.mp4
 !public/projects/*.mp4
+!public/videos/*.mp4
 
 .vercel
 tsconfig.tsbuildinfo

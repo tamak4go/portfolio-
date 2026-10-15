@@ -13,6 +13,8 @@ export interface Project {
   highlights?: string[];
   tech: string[];
   thumbnail?: string;
+  video?: string;
+  youtubeUrl?: string;
   liveUrl?: string;
   repoUrl?: string;
   caseStudyUrl?: string;
@@ -24,6 +26,8 @@ export interface FeaturedProject {
   description: string;
   tech: string[];
   thumbnail?: string;
+  video?: string;
+  youtubeUrl?: string;
   caseStudyUrl: string;
 }
 
@@ -89,6 +93,7 @@ export const PORTFOLIO = {
       "From a graduation brief to a live business tool: e-commerce, Đông Y diagnosis, appointment booking, and full nhà thuốc operations, running today at tmpms.io.vn.",
     tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Gemini AI", "Docker"],
     thumbnail: "/projects/tmpms.png",
+    video: "/videos/tmpms.mp4",
     caseStudyUrl: "/projects/tmpms",
   } satisfies FeaturedProject,
 
@@ -107,6 +112,7 @@ export const PORTFOLIO = {
       ],
       tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Docker"],
       thumbnail: "/projects/tmpms.png",
+      video: "/videos/tmpms.mp4",
       liveUrl: "https://tmpms.io.vn/",
       repoUrl: "https://github.com/TMPMS/TMPMS",
     },
@@ -124,6 +130,8 @@ export const PORTFOLIO = {
       ],
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL"],
       thumbnail: "/projects/trackingtours.png",
+      video: "/videos/tracking-phuot.mp4",
+      youtubeUrl: "https://youtu.be/56dwJ55X3eY",
       liveUrl: "https://trackingtours.vercel.app",
       repoUrl: "https://github.com/tamak4go/trackingtours",
       caseStudyUrl: "/projects/tracking-phuot",
@@ -142,6 +150,7 @@ export const PORTFOLIO = {
       ],
       tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
       thumbnail: "/projects/dressroom.png",
+      video: "/videos/viet-phuc-cac.mp4",
       liveUrl: "https://dressroom-eight.vercel.app/",
       repoUrl: "https://github.com/tamak4go/dressroom",
     },

@@ -7,48 +7,48 @@
 ---
 
 ## 1. Trạng Thái Hiện Tại (Current Status)
-- Đã hoàn thành 100% yêu cầu sửa CV (bản tiếng Việt và tiếng Anh) vừa đúng 1 trang A4 và đồng bộ trang Portfolio.
-- Cả hai file LaTeX (`cv/main_example_vi.tex`, `cv/main_example.tex`) đã được biên dịch thành công qua `lualatex`, xuất ra file PDF 1 trang duy nhất: `Trinh-Quang-Tam-CV-VI.pdf` và `Trinh-Quang-Tam-CV-EN.pdf` (đặt tại `cv/` và đồng bộ sang `public/`).
-- Ứng dụng Next.js đã đồng bộ toàn diện (`lib/data.ts`, `lib/tech-icons.tsx`, `components/ChatWidget.tsx`, `static-version/js/data.js`), kiểm thử build production (`npm run build`) thành công 100% không có lỗi TypeScript hay linter.
+- Đã hoàn thành 100% yêu cầu xử lý/edit và gắn video demo tự động chạy khi lướt tới (scroll-in-view auto-play) cho toàn bộ các dự án:
+  1. **TMPMS:** Video demo sản phẩm thực tế được nén và tối ưu từ screen recording thành `public/videos/tmpms.mp4` (5.14 MB, web-optimized faststart H.264).
+  2. **Việt Phục Các – Phòng Thử Đồ Cổ Phục:** Video demo tương tác thay đồ, nhuộm gấm và xuất lookbook từ screen recording thành `public/videos/viet-phuc-cac.mp4` (2.15 MB, web-optimized faststart H.264).
+  3. **Tracking Phượt:** Tải từ YouTube `https://youtu.be/56dwJ55X3eY`, tối ưu thành `public/videos/tracking-phuot.mp4` (9.26 MB) để tự động phát mượt mà khi cuộn tới; kèm nút liên kết trực tiếp "YouTube" dẫn thẳng đến video YouTube gốc.
+- Đã xây dựng component `VideoPreview.tsx` chuẩn responsive, tích hợp `IntersectionObserver` tự động play khi cuộn vào tầm nhìn (>30%) và pause khi cuộn ra ngoài để tiết kiệm CPU/GPU/băng thông. Có thanh progress bar trực quan, hiệu ứng hover nút Play/Pause và badge trạng thái.
+- Đã tích hợp đồng bộ vào `FeaturedProject.tsx`, `ProjectCard.tsx`, trang case study `TmpmsView.tsx`, `TrackingPhuotView.tsx`, và dữ liệu `lib/data.ts` cùng `static-version/js/data.js`.
+- Cập nhật `.gitignore` cho phép push video `!public/videos/*.mp4`.
+- Kiểm thử build production (`npm run build`) thành công 100% không có bất kỳ lỗi nào.
 
 ---
 
 ## 2. Lịch Sử Làm Việc (History / Timeline)
 
 ### [2026-10-15 14:10] - Khảo sát & Phân tích ban đầu
-- Đọc và phân tích yêu cầu của User:
-  - Header: Hà Nội, Việt Nam.
-  - Vị trí: Frontend Developer (có thể làm full-stack). Nơi ứng tuyển: Hà Nội.
-  - Học vấn: Đã tốt nghiệp 10/2026 Đại học FPT Đà Nẵng, bỏ "dự kiến".
-  - Giới thiệu: Viết lại 2-3 dòng theo mẫu mới cho cả VI và EN.
-  - Kỹ năng: Bỏ dòng AI, đưa Claude Code vào Công cụ, thêm Spring Boot vào Backend, gộp Ngoại ngữ vào cuối mục Kỹ năng, đưa React/Next.js/TypeScript lên đầu Frontend.
-  - Thực tập: FPT Software (01/2025 – 05/2025) làm Spring Boot, SQL, Agile/Scrum.
-  - Dự án: TMPMS (nhóm 4 người, full-stack), Tracking Phượt (Top 500 AI Riser Vietnam 2026), thêm mới Việt Phục Các (09/2026).
-  - Thành tích: Thêm mục Thành tích với giải Top 500 AI Riser Vietnam 2026 (Google for Developers).
-- Khảo sát repo thực tế `c:\Users\ngtam\Downloads\dressroom`:
-  - Trích xuất 3 bullet chính xác từ code: Xếp lớp PNG đa tầng búp bê giấy với hiệu ứng 3D Paper Shadow-Box tilt (ThreeUI lerp physics) và Z-depth; Phòng nhuộm gấm vóc 6 sắc triều Nguyễn sử dụng CSS filter độc lập trên thân áo; Xuất ảnh Lookbook HD (768x1376) bằng HTML5 Canvas 2D tổng hợp đa lớp và đóng triện son hoàng gia.
-- Lập file Kế hoạch (Plan artifact) và dừng lại hỏi xác nhận mốc thời gian của TMPMS và Tracking Phượt theo đúng quy tắc No Auto-Proceed và Zero Hallucination.
+- Đọc và phân tích yêu cầu của User về CV và dự án.
+- Khảo sát repo `c:\Users\ngtam\Downloads\dressroom` và trích xuất bullet points.
 
-### [2026-10-15 14:13] - Phản hồi từ User & Triển khai chi tiết
-- **User cung cấp & duyệt:**
-  - TMPMS: `06/2026 – 10/2026`.
-  - Tracking Phượt: `10/2026`.
-  - Xác nhận 3 bullet cho dự án Việt Phục Các từ code thật và duyệt triển khai kế hoạch.
-- **Thực thi thay đổi:**
-  1. [`cv/main_example_vi.tex`](file:///c:/Users/ngtam/Downloads/pof/cv/main_example_vi.tex): Cấu trúc lại đúng thứ tự Header → Giới thiệu → Học vấn → Kỹ năng (kèm ngoại ngữ) → Kinh nghiệm → Dự án (TMPMS, Tracking Phượt, Việt Phục Các) → Thành tích. Tinh chỉnh scale 0.88, margins 1.0cm/1.2cm.
-  2. [`cv/main_example.tex`](file:///c:/Users/ngtam/Downloads/pof/cv/main_example.tex): Đồng bộ hoàn toàn sang tiếng Anh, khớp nội dung 100% với bản VI.
-  3. Biên dịch qua `lualatex`: Cả 2 bản đều ra đúng 1 trang PDF A4 duy nhất (không tràn trang).
-  4. Xuất và sao chép PDF: `Trinh-Quang-Tam-CV-VI.pdf` và `Trinh-Quang-Tam-CV-EN.pdf` vào `cv/` và `public/`.
-  5. [`lib/data.ts`](file:///c:/Users/ngtam/Downloads/pof/lib/data.ts): Cập nhật thông tin profile, vai trò Frontend Developer, bio mới, danh sách dự án (sửa TMPMS nhóm 4 người, Tracking Phượt Top 500, thêm Việt Phục Các link demo và 3 bullet), cập nhật FPT Software (Spring Boot, SQL), cập nhật học vấn tốt nghiệp 10/2026, thêm item vào `events` để kích hoạt card thành tích Top 500 trên trang chủ.
-  6. [`lib/tech-icons.tsx`](file:///c:/Users/ngtam/Downloads/pof/lib/tech-icons.tsx): Bổ sung icons cho Spring Boot (`SiSpringboot`), PostgreSQL (`SiPostgresql`) và Claude Code (`SiAnthropic`).
-  7. [`components/ChatWidget.tsx`](file:///c:/Users/ngtam/Downloads/pof/components/ChatWidget.tsx): Cập nhật câu trả lời mẫu của chatbot khớp với các dự án, học vấn tốt nghiệp và vai trò ứng tuyển mới.
-  8. [`static-version/js/data.js`](file:///c:/Users/ngtam/Downloads/pof/static-version/js/data.js): Đồng bộ dữ liệu bản tĩnh.
-  9. Thumbnail: Đã copy `preview_tu_than_perfect.png` từ `c:\Users\ngtam\Downloads\dressroom` sang `public/projects/dressroom.png`.
+### [2026-10-15 14:13] - Hoàn thiện CV và đồng bộ dữ liệu Portfolio
+- Biên dịch 2 bản CV LaTeX sang PDF 1 trang A4.
+- Cập nhật profile, kỹ năng, kinh nghiệm và giao diện chatbot. Build Next.js thành công.
+
+### [2026-10-15 17:25] - Edit và gắn Video Auto-play trên từng Project
+- **Phân tích nguồn video:**
+  - `Screen Recording 2026-10-15 152424.mp4` (48 MB) -> Website TMPMS (Trang chủ, chi tiết sản phẩm Đông Y, trang quản trị).
+  - `Screen Recording 2026-10-15 153735.mp4` (67 MB) -> Việt Phục Các (Giao diện thử đồ 3D, đổi màu sắc triều Nguyễn).
+  - YouTube `https://youtu.be/56dwJ55X3eY` -> Tracking Phượt (Demo tái hiện bản đồ GPS, timeline ảnh).
+- **Xử lý & Biên tập Video:**
+  - Nâng cấp `yt-dlp` và tải video HLS của Tracking Phượt.
+  - Dùng `ffmpeg` chuẩn hóa cả 3 video sang định dạng H.264 Web (720p/1280px, CRF 24-26, `-movflags +faststart`, không chứa track audio nặng gây block autoplay trình duyệt).
+  - Kết quả nén siêu nhẹ: TMPMS: 5.14 MB (giảm ~90%), Việt Phục Các: 2.15 MB (giảm ~97%), Tracking Phượt: 9.26 MB.
+- **Phát triển UI/UX (Scroll Autoplay Component):**
+  - Tạo `components/VideoPreview.tsx`: Sử dụng `IntersectionObserver` tự động phát mượt mà khi cuộn vào khung nhìn, tạm dừng khi cuộn ra; hỗ trợ poster thumbnail mượt mà tránh giật lag; badge trạng thái "Playing" / "Demo" nhấp nháy; nút Play/Pause khi rê chuột; thanh progress bar mảnh đồng điệu tone màu thiết kế.
+  - Nâng cấp `components/FeaturedProject.tsx` hiển thị video demo lớn cho TMPMS.
+  - Nâng cấp `components/ProjectCard.tsx` hiển thị video demo tự chạy cho Tracking Phượt và Việt Phục Các, tích hợp nút "YouTube" với icon `SiYoutube` cho Tracking Phượt.
+  - Nâng cấp trang Case Study `TmpmsView.tsx` và `TrackingPhuotView.tsx` dùng `VideoPreview` sắc nét.
+  - Cập nhật `lib/data.ts` và `static-version/js/data.js` bổ sung trường `video` và `youtubeUrl`.
+  - Cập nhật `.gitignore` mở ngoại lệ `!public/videos/*.mp4`.
 - **Kiểm thử thực tế (Mandatory Verification):**
-  - Chạy lệnh `npm run build`: Thành công 100% (Compiled successfully, Typecheck OK, 14/14 static pages prerendered).
+  - Chạy lệnh `npm run build`: Thành công 100% (Compiled successfully in Turbopack, Typecheck OK, 14/14 static pages prerendered).
 
 ---
 
 ## 3. Các Bước Tiếp Theo (Next Steps)
-- Bàn giao kết quả và danh sách file đã chỉnh sửa cho User.
-- Người dùng có thể chạy `npm run dev` tại cổng `http://localhost:3000` để trực tiếp trải nghiệm giao diện và tải về hai bản CV PDF đã xuất.
+- Người dùng có thể kiểm tra trực tiếp giao diện bằng cách chạy dev server hoặc deploy lên Vercel.
+- Các video demo sẽ tự động chạy mượt mà ngay khi người dùng cuộn chuột tới từng project.

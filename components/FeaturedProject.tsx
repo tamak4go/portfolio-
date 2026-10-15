@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { PORTFOLIO, BRAND_COLORS } from "@/lib/data";
 import { getTechIcon, getTechIconColor } from "@/lib/tech-icons";
 import { Reveal } from "./Reveal";
+import { VideoPreview } from "./VideoPreview";
 
 export function FeaturedProject() {
   const { featured } = PORTFOLIO;
@@ -27,10 +28,13 @@ export function FeaturedProject() {
           onMouseMove={handleMouseMove}
           className="spotlight-card group relative flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition-colors dark:border-neutral-800 dark:bg-surface sm:flex-row"
         >
-          <div className="h-44 shrink-0 overflow-hidden sm:h-auto sm:w-[42%]">
-            <div
-              className="h-full w-full bg-gradient-to-br from-neutral-100 to-neutral-200 bg-cover bg-center dark:from-neutral-900 dark:to-black"
-              style={featured.thumbnail ? { backgroundImage: `url(${featured.thumbnail})` } : undefined}
+          <div className="h-52 shrink-0 overflow-hidden sm:h-auto sm:w-[44%]">
+            <VideoPreview
+              src={featured.video}
+              poster={featured.thumbnail}
+              title={featured.title}
+              badgeLabel="Featured Demo"
+              className="h-full w-full min-h-[200px]"
             />
           </div>
           <div className="relative flex flex-1 flex-col gap-2.5 p-6">

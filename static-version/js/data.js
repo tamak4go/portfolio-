@@ -32,7 +32,8 @@ const PORTFOLIO = {
     title: "TMPMS: a production pharmacy platform.",
     description: "From a graduation brief to a live business tool: e-commerce, Đông Y diagnosis, appointment booking, and full nhà thuốc operations, running today at tmpms.io.vn.",
     tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Docker"],
-    thumbnail: "",
+    thumbnail: "/projects/tmpms.png",
+    video: "/videos/tmpms.mp4",
     caseStudyUrl: "https://tmpms.io.vn/",
   },
 
@@ -43,7 +44,8 @@ const PORTFOLIO = {
       status: "live", // "live" | "in-progress" | "coming-soon"
       description: "Graduation project for FPT University (team of 4) — full-stack production pharmacy platform with e-commerce, diagnosis, appointment booking, and PayOS integration.",
       tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Docker"],
-      thumbnail: "",
+      thumbnail: "/projects/tmpms.png",
+      video: "/videos/tmpms.mp4",
       url: "https://tmpms.io.vn/",
     },
     {
@@ -51,7 +53,9 @@ const PORTFOLIO = {
       status: "live",
       description: "Top 500 — AI Riser Vietnam 2026 (Google for Developers). Reconstructs animated route maps from GPS photos with 3 video-export pipelines.",
       tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL"],
-      thumbnail: "",
+      thumbnail: "/projects/trackingtours.png",
+      video: "/videos/tracking-phuot.mp4",
+      youtubeUrl: "https://youtu.be/56dwJ55X3eY",
       url: "https://trackingtours.vercel.app",
     },
     {
@@ -59,7 +63,8 @@ const PORTFOLIO = {
       status: "live",
       description: "Interactive traditional Vietnamese costume fitting room (Cổ Phục triều Nguyễn) with paper doll multi-layer PNG stacking, 3D tilt depth, royal palette garment dyeing, and HD lookbook export.",
       tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
-      thumbnail: "",
+      thumbnail: "/projects/dressroom.png",
+      video: "/videos/viet-phuc-cac.mp4",
       url: "https://dressroom-eight.vercel.app/",
     },
   ],

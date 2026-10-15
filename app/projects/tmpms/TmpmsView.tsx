@@ -9,6 +9,8 @@ import { getTechIcon, getTechIconColor } from "@/lib/tech-icons";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
+import { VideoPreview } from "@/components/VideoPreview";
+
 export function TmpmsView() {
   const techStack = ["ASP.NET Core", "EF Core", "SQL Server", "React", "Vite", "SignalR", "Gemini AI", "PayOS", "Docker"];
 
@@ -48,14 +50,12 @@ export function TmpmsView() {
 
           {/* Large project demo clip */}
           <div className="my-8 overflow-hidden rounded-2xl border border-black/10 dark:border-white/10">
-            <video
-              src="/projects/tmpms.mp4"
-              aria-label="TMPMS storefront walkthrough"
-              className="w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
-              autoPlay
-              loop
-              muted
-              playsInline
+            <VideoPreview
+              src="/videos/tmpms.mp4"
+              poster="/projects/tmpms.png"
+              title="TMPMS storefront walkthrough"
+              badgeLabel="Full Walkthrough"
+              className="w-full aspect-video"
             />
           </div>
 
