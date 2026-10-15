@@ -21,6 +21,9 @@ import {
   SiDocker,
   SiVite,
   SiGooglegemini,
+  SiSpringboot,
+  SiPostgresql,
+  SiAnthropic,
 } from "react-icons/si";
 import { Webhook, RefreshCw, Database, Radio } from "lucide-react";
 
@@ -36,11 +39,14 @@ export const TECH_ICONS: Record<string, IconType> = {
   "html/css": SiHtml5,
   "node.js": SiNodedotjs,
   java: SiOpenjdk,
+  "spring boot": SiSpringboot,
   mysql: SiMysql,
+  postgresql: SiPostgresql,
   mongodb: SiMongodb,
   git: SiGit,
   github: SiGithub,
   postman: SiPostman,
+  "claude code": SiAnthropic,
   "tailwind css": SiTailwindcss,
   supabase: SiSupabase,
   "maplibre gl": SiMaplibre,

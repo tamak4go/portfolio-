@@ -1,0 +1,131 @@
+%% CV mau - Trinh Quang Tam (ban tieng Viet)
+%% Ban tong quan day du nang luc, kinh nghiem va thanh tich.
+%% Dung lam tai lieu tham chieu khi tailor CV cho tung vi tri cu the.
+%%
+%% Compile with: lualatex main_example_vi.tex
+
+\documentclass[10pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% Force the name and section headings to render in moderncv blue (color1).
+\renewcommand*{\namefont}{\fontsize{24}{26}\bfseries\upshape}
+\colorlet{firstnamecolor}{color1}
+\colorlet{lastnamecolor}{color1}
+\colorlet{namecolor}{color1}
+\renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
+
+\usepackage[utf8]{inputenc}
+\AtEndPreamble{\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+    pdftitle={Trịnh Quang Tâm - CV},
+    pdfpagemode=UseNone,
+}}
+\usepackage[scale=0.88, top=1.0cm, bottom=1.0cm, left=1.2cm, right=1.2cm]{geometry}
+\usepackage{import}
+
+% personal data
+\name{Trịnh Quang}{Tâm}
+\address{Hà Nội, Việt Nam}{}{}
+\phone[mobile]{+84 862 544 627}
+\email{ng.tammail@gmail.com}
+\extrainfo{\href{https://www.linkedin.com/in/tâm-trịnh-70b052381}{LinkedIn}, \href{https://github.com/tamak4go}{GitHub}}
+
+\begin{document}
+
+\makecvtitle
+\vspace{-22pt}
+
+% ============================================================
+%     GIOI THIEU
+% ============================================================
+\small{Lập trình viên Frontend, mới tốt nghiệp ngành Công nghệ Thông tin tại Đại học FPT Đà Nẵng (10/2026), làm việc với React, Next.js, TypeScript và có thể làm full-stack với ASP.NET Core. Từng thực tập Java (Spring Boot, SQL) tại FPT Software và làm việc theo quy trình Agile/Scrum. Đang tìm vị trí Frontend Developer tại Hà Nội.}
+
+% ============================================================
+%     HOC VAN
+% ============================================================
+\vspace{-4pt}
+\section{Học vấn}
+\vspace{1pt}
+\begin{itemize}
+\item{\cventry{2022 -- 10/2026}{Cử nhân Công nghệ Thông tin}{Đại học FPT}{Đà Nẵng, Việt Nam}{}{\vspace{-1pt}Đã tốt nghiệp tháng 10/2026.}}
+\end{itemize}
+
+% ============================================================
+%     KY NANG
+% ============================================================
+\vspace{-4pt}
+\section{Kỹ năng}
+\vspace{1pt}
+\begin{itemize}
+\item \textbf{Frontend}: React, Next.js, TypeScript, JavaScript, Tailwind CSS, Vue.js
+\item \textbf{Backend}: ASP.NET Core 8, EF Core, Spring Boot (Java), Node.js, SignalR, RESTful APIs
+\item \textbf{Cơ sở dữ liệu}: SQL Server, PostgreSQL, MySQL, Supabase, MongoDB
+\item \textbf{DevOps \& Công cụ}: Git/GitHub, Docker, Vercel, Postman, Claude Code, Agile/Scrum
+\item \textbf{Ngoại ngữ}: Tiếng Việt (bản ngữ), Tiếng Anh (thành thạo), Tiếng Nhật (cơ bản)
+\end{itemize}
+
+% ============================================================
+%     KINH NGHIEM LAM VIEC
+% ============================================================
+\vspace{-4pt}
+\section{Kinh nghiệm làm việc}
+\vspace{1pt}
+\begin{itemize}
+\item{\cventry{01/2025 -- 05/2025}{Lập trình viên Java (Thực tập sinh)}{FPT Software}{Đà Nẵng, Việt Nam}{}{\vspace{1pt}
+\begin{itemize}
+    \item {Phát triển và bảo trì các module ứng dụng Java sử dụng Spring Boot và cơ sở dữ liệu SQL.}
+    \item {Phối hợp làm việc trong đội ngũ kỹ thuật theo quy trình Agile/Scrum.}
+\end{itemize}}}
+\end{itemize}
+
+% ============================================================
+%     DU AN
+% ============================================================
+\vspace{-4pt}
+\section{Dự án}
+\vspace{1pt}
+\begin{itemize}
+
+\item{\cventry{06/2026 -- 10/2026}{TMPMS -- Full-stack Developer}{Đồ án tốt nghiệp (nhóm 4 người), live tại \href{https://tmpms.io.vn/}{tmpms.io.vn}}{}{}{\vspace{1pt}
+\begin{itemize}
+    \item {Xây dựng nền tảng nhà thuốc y học cổ truyền (Đông Y) kết hợp thương mại điện tử, chẩn đoán trực tuyến và đặt lịch hẹn khám có đặt cọc.}
+    \item {Thiết kế kiến trúc backend phân lớp bằng ASP.NET Core 8, EF Core trên SQL Server, tích hợp xác thực JWT + Identity.}
+    \item {Phát triển chat trực tuyến với dược sĩ và chatbot tư vấn thông minh qua SignalR tích hợp Gemini AI.}
+    \item {Triển khai quản lý kho FEFO, đặt lịch có cọc, flash sale tự động, thanh toán PayOS với webhook idempotent có xác minh chữ ký; xây dựng frontend React 19 + Vite và đóng gói Docker.}
+\end{itemize}}}
+
+\vspace{1pt}
+
+\item{\cventry{10/2026}{Tracking Phượt -- Creator \& Sole Developer}{Dự án cá nhân, live tại \href{https://trackingtours.vercel.app}{trackingtours.vercel.app}}{}{}{\vspace{1pt}
+\begin{itemize}
+    \item {Dựng bản đồ hành trình động từ dữ liệu GPS trong ảnh (kể cả HEIC) bằng MapLibre GL và tính toán lộ trình thực tế qua OSRM.}
+    \item {Xây dựng backend và cơ sở dữ liệu trên Supabase (Postgres, Storage, Google OAuth) với cơ chế phân quyền chuyến đi bằng edit-token.}
+    \item {Triển khai 3 pipeline xuất video (quay màn hình, chụp canvas từng khung, render server Puppeteer + ffmpeg) và tự động đăng TikTok qua Content Posting API.}
+\end{itemize}}}
+
+\vspace{1pt}
+
+\item{\cventry{09/2026}{Việt Phục Các – Phòng Thử Đồ Cổ Phục -- Creator \& Sole Developer}{Dự án cá nhân, live tại \href{https://dressroom-eight.vercel.app/}{dressroom-eight.vercel.app}}{}{}{\vspace{1pt}
+\begin{itemize}
+    \item {Xây dựng hệ thống búp bê giấy xếp lớp phục sức PNG đa tầng (Y phục, Khăn mũ, Quần thường, Hài guốc, Phụ kiện) với hiệu ứng 3D Paper Shadow-Box tilt và Z-depth.}
+    \item {Phát triển tính năng nhuộm gấm vóc 6 sắc phục triều Nguyễn sử dụng CSS filter độc lập trên lớp thân áo mà không lem màu da hay chi tiết khác.}
+    \item {Tích hợp xuất ảnh Lookbook chuẩn HD (768x1376) bằng HTML5 Canvas 2D tổng hợp đa lớp, tự động đóng dấu triện son hoàng gia và thư pháp tiêu đề.}
+\end{itemize}}}
+
+\end{itemize}
+
+% ============================================================
+%     THANH TICH
+% ============================================================
+\vspace{-4pt}
+\section{Thành tích}
+\vspace{1pt}
+\begin{itemize}
+\item {Top 500 -- Cuộc thi AI Riser Vietnam 2026 (Google for Developers) \hfill 10/2026}
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,130 @@
+%% Example CV - Trinh Quang Tam (English version)
+%% Comprehensive overview of all competencies, experience, and achievements.
+%%
+%% Compile with: lualatex main_example.tex
+
+\documentclass[10pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% Force the name and section headings to render in moderncv blue (color1).
+\renewcommand*{\namefont}{\fontsize{24}{26}\bfseries\upshape}
+\colorlet{firstnamecolor}{color1}
+\colorlet{lastnamecolor}{color1}
+\colorlet{namecolor}{color1}
+\renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
+
+\usepackage[utf8]{inputenc}
+\AtEndPreamble{\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+    pdftitle={Trịnh Quang Tâm - CV},
+    pdfpagemode=UseNone,
+}}
+\usepackage[scale=0.88, top=1.0cm, bottom=1.0cm, left=1.2cm, right=1.2cm]{geometry}
+\usepackage{import}
+
+% personal data
+\name{Trịnh Quang}{Tâm}
+\address{Hà Nội, Vietnam}{}{}
+\phone[mobile]{+84 862 544 627}
+\email{ng.tammail@gmail.com}
+\extrainfo{\href{https://www.linkedin.com/in/tâm-trịnh-70b052381}{LinkedIn}, \href{https://github.com/tamak4go}{GitHub}}
+
+\begin{document}
+
+\makecvtitle
+\vspace{-22pt}
+
+% ============================================================
+%     PROFILE STATEMENT
+% ============================================================
+\small{Frontend developer and recent Information Technology graduate of FPT University Đà Nẵng (10/2026), working with React, Next.js, and TypeScript, and able to work full-stack with ASP.NET Core. Completed a Java internship (Spring Boot, SQL) at FPT Software and worked in an Agile/Scrum process. Seeking a Frontend Developer role in Hà Nội.}
+
+% ============================================================
+%     EDUCATION
+% ============================================================
+\vspace{-4pt}
+\section{Education}
+\vspace{1pt}
+\begin{itemize}
+\item{\cventry{2022 -- 10/2026}{Bachelor of Information Technology}{FPT University}{Đà Nẵng, Vietnam}{}{\vspace{-1pt}Graduated October 2026.}}
+\end{itemize}
+
+% ============================================================
+%     CORE COMPETENCIES
+% ============================================================
+\vspace{-4pt}
+\section{Core Competencies}
+\vspace{1pt}
+\begin{itemize}
+\item \textbf{Frontend}: React, Next.js, TypeScript, JavaScript, Tailwind CSS, Vue.js
+\item \textbf{Backend}: ASP.NET Core 8, EF Core, Spring Boot (Java), Node.js, SignalR, RESTful APIs
+\item \textbf{Databases}: SQL Server, PostgreSQL, MySQL, Supabase, MongoDB
+\item \textbf{DevOps \& Tools}: Git/GitHub, Docker, Vercel, Postman, Claude Code, Agile/Scrum
+\item \textbf{Languages}: Vietnamese (native), English (fluent), Japanese (basic)
+\end{itemize}
+
+% ============================================================
+%     PROFESSIONAL EXPERIENCE
+% ============================================================
+\vspace{-4pt}
+\section{Professional Experience}
+\vspace{1pt}
+\begin{itemize}
+\item{\cventry{01/2025 -- 05/2025}{Java Developer (Intern)}{FPT Software}{Đà Nẵng, Vietnam}{}{\vspace{1pt}
+\begin{itemize}
+    \item {Developed and maintained Java application modules using Spring Boot and SQL databases.}
+    \item {Collaborated within the engineering team following the Agile/Scrum process.}
+\end{itemize}}}
+\end{itemize}
+
+% ============================================================
+%     INDEPENDENT PROJECTS
+% ============================================================
+\vspace{-4pt}
+\section{Independent Projects}
+\vspace{1pt}
+\begin{itemize}
+
+\item{\cventry{06/2026 -- 10/2026}{TMPMS -- Full-stack Developer}{Graduation project (team of 4), live at \href{https://tmpms.io.vn/}{tmpms.io.vn}}{}{}{\vspace{1pt}
+\begin{itemize}
+    \item {Built a traditional-medicine (Đông Y) pharmacy platform combining e-commerce, online diagnosis, and appointment booking with deposits.}
+    \item {Designed a layered backend using ASP.NET Core 8 and EF Core on SQL Server with JWT + Identity authentication.}
+    \item {Developed real-time pharmacist chat and an intelligent chatbot via SignalR integrated with Gemini AI.}
+    \item {Implemented FEFO inventory management, deposit bookings, automated flash sales, and PayOS payments with idempotent, signature-verified webhooks; built the React 19 + Vite frontend and deployed with Docker.}
+\end{itemize}}}
+
+\vspace{1pt}
+
+\item{\cventry{10/2026}{Tracking Phượt -- Creator \& Sole Developer}{Independent project, live at \href{https://trackingtours.vercel.app}{trackingtours.vercel.app}}{}{}{\vspace{1pt}
+\begin{itemize}
+    \item {Reconstructed animated route maps from GPS data embedded in trip photos (including HEIC) using MapLibre GL and actual routing via OSRM.}
+    \item {Built the backend and database on Supabase (Postgres, Storage, Google OAuth) with edit-token-based trip ownership.}
+    \item {Implemented 3 video-export pipelines (screen recording, frame-by-frame canvas capture, Puppeteer + ffmpeg server rendering) and automated TikTok posting via Content Posting API.}
+\end{itemize}}}
+
+\vspace{1pt}
+
+\item{\cventry{09/2026}{Việt Phục Các – Ancient Attire Fitting Room -- Creator \& Sole Developer}{Independent project, live at \href{https://dressroom-eight.vercel.app/}{dressroom-eight.vercel.app}}{}{}{\vspace{1pt}
+\begin{itemize}
+    \item {Built an interactive paper doll multi-layer PNG costume system (robes, headwear, pants, shoes, accessories) with 3D Paper Shadow-Box tilt and Z-depth.}
+    \item {Developed a royal costume dye studio for 6 Nguyễn Dynasty color palettes using isolated CSS filters on garments without color bleeding.}
+    \item {Integrated HD Lookbook export (768x1376) using HTML5 Canvas 2D multi-layer compositing with royal seal stamping and calligraphy titles.}
+\end{itemize}}}
+
+\end{itemize}
+
+% ============================================================
+%     ACHIEVEMENTS
+% ============================================================
+\vspace{-4pt}
+\section{Achievements}
+\vspace{1pt}
+\begin{itemize}
+\item {Top 500 Finalist -- AI Riser Vietnam 2026 (Google for Developers) \hfill 10/2026}
+\end{itemize}
+
+\end{document}

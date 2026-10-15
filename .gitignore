@@ -8,3 +8,7 @@ npm-debug.log*
 
 .vercel
 tsconfig.tsbuildinfo
+*.aux
+*.log
+*.out
+cv/main_example*.pdf

@@ -56,15 +56,15 @@ export interface OutsideData {
 export const PORTFOLIO = {
   initials: "TQT",
   name: "Trịnh Quang Tâm",
-  role: "Full-Stack Web Developer",
-  roleTagline: "React, Next.js & Node.js",
-  status: "Available for internship & fresher roles",
+  role: "Frontend Developer",
+  roleTagline: "React, Next.js, TypeScript & ASP.NET Core",
+  status: "Graduated (10/2026) · Seeking Frontend Developer role in Hà Nội",
   avatarText: "TQT",
   // Distinct light/dark photos, swapped automatically based on the active theme.
   avatarLightUrl: "/avatars/avatar-light.png",
   avatarDarkUrl: "/avatars/avatar-dark.png",
 
-  bio: "Final-year Information Technology student at FPT University and a full-stack web developer working across React/Vite and ASP.NET Core. I designed, built, and deployed my graduation project, TMPMS, solo, covering everything from requirements analysis and database design to API development and UI implementation.",
+  bio: "Frontend developer and recent Information Technology graduate of FPT University Đà Nẵng (10/2026), working with React, Next.js, and TypeScript, and able to work full-stack with ASP.NET Core. Completed a Java internship (Spring Boot, SQL) at FPT Software and worked in an Agile/Scrum process. Seeking a Frontend Developer role in Hà Nội.",
 
   socials: {
     github: "https://github.com/tamak4go",
@@ -84,9 +84,9 @@ export const PORTFOLIO = {
 
   featured: {
     label: "FEATURED BUILD",
-    title: "TMPMS: a production pharmacy platform, built solo.",
+    title: "TMPMS: a production pharmacy platform.",
     description:
-      "Traditional-medicine pharmacy management system: e-commerce, Đông Y diagnosis, appointment booking, and full nhà thuốc operations, live at tmpms.io.vn.",
+      "From a graduation brief to a live business tool: e-commerce, Đông Y diagnosis, appointment booking, and full nhà thuốc operations, running today at tmpms.io.vn.",
     tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Gemini AI", "Docker"],
     thumbnail: "/projects/tmpms.png",
     caseStudyUrl: "/projects/tmpms",
@@ -95,15 +95,15 @@ export const PORTFOLIO = {
   projects: [
     {
       title: "TMPMS",
-      role: "Creator & Sole Developer",
-      year: "2026",
+      role: "Full-Stack Developer (Team of 4)",
+      year: "06/2026 – 10/2026",
       status: "live",
       description:
-        "Graduation project for FPT University, a production pharmacy platform combining traditional (Đông Y) and Western medicine: e-commerce, online diagnosis, appointment booking with deposits, and full nhà thuốc operations. Designed and built solo, live at tmpms.io.vn.",
+        "Graduation project for FPT University (team of 4), a production pharmacy platform combining traditional (Đông Y) and Western medicine: e-commerce, online diagnosis, appointment booking with deposits, and full nhà thuốc operations. Handled end-to-end development (frontend, backend, database), live at tmpms.io.vn.",
       highlights: [
-        "ASP.NET Core 8 / EF Core backend on SQL Server",
+        "ASP.NET Core 8 / EF Core backend on SQL Server with JWT + Identity",
         "Real-time pharmacist chat & AI (Gemini) via SignalR",
-        "PayOS payments with idempotent webhooks",
+        "FEFO inventory, deposit booking & PayOS payments with idempotent webhooks",
       ],
       tech: ["ASP.NET Core", "SQL Server", "React", "SignalR", "PayOS", "Docker"],
       thumbnail: "/projects/tmpms.png",
@@ -113,36 +113,44 @@ export const PORTFOLIO = {
     {
       title: "Tracking Phượt",
       role: "Creator & Sole Developer",
-      year: "2026",
+      year: "10/2026",
       status: "live",
       description:
-        "Upload trip photos and it reconstructs the route from the GPS data embedded in them. Redesigned into a full app with Google sign-in, a dashboard (map view, gallery, stats), social features (an Explore feed of public rides and a Community page), and a Pro tier.",
+        "Top 500 — AI Riser Vietnam 2026 (Google for Developers). Upload trip photos and it reconstructs the route from embedded GPS data (including HEIC). Features 3 video-export pipelines and automatic TikTok posting.",
       highlights: [
-        "GPS route reconstruction from photo EXIF data",
-        "Google sign-in, dashboard & Pro tier",
-        "Explore feed & Community stats",
+        "Top 500 Finalist — AI Riser Vietnam 2026 (Google for Developers)",
+        "GPS route reconstruction with MapLibre GL & OSRM",
+        "3 video-export pipelines & TikTok Content Posting API",
       ],
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL", "Vitest"],
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "MapLibre GL"],
       thumbnail: "/projects/trackingtours.png",
       liveUrl: "https://trackingtours.vercel.app",
       repoUrl: "https://github.com/tamak4go/trackingtours",
       caseStudyUrl: "/projects/tracking-phuot",
     },
     {
-      title: "Next Build",
+      title: "Việt Phục Các – Phòng Thử Đồ Cổ Phục",
       role: "Creator & Sole Developer",
-      year: "2026",
-      status: "coming-soon",
-      description: "Something new is taking shape behind the scenes. Stay tuned.",
-      tech: [],
-      thumbnail: "",
+      year: "09/2026",
+      status: "live",
+      description:
+        "Interactive traditional Vietnamese costume fitting room (Cổ Phục triều Nguyễn) with paper doll multi-layer PNG stacking, 3D tilt depth, royal palette garment dyeing, and HD lookbook export.",
+      highlights: [
+        "Multi-layer PNG costume system with 3D Paper Shadow-Box tilt (ThreeUI)",
+        "Nguyễn Dynasty royal dye studio with isolated garment CSS filters",
+        "HD Lookbook export (768x1376) via HTML5 Canvas 2D & royal seal stamping",
+      ],
+      tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      thumbnail: "/projects/dressroom.png",
+      liveUrl: "https://dressroom-eight.vercel.app/",
+      repoUrl: "https://github.com/tamak4go/dressroom",
     },
   ] satisfies Project[],
 
   technologies: [
-    ["React", "Next.js", "Vue.js", "JavaScript", "HTML/CSS"],
-    ["Node.js", "Java", "MySQL", "MongoDB"],
-    ["Git", "GitHub", "REST API", "Postman", "Agile/Scrum"],
+    ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Vue.js"],
+    ["ASP.NET Core", "EF Core", "Spring Boot", "Java", "SQL Server", "PostgreSQL", "Supabase"],
+    ["Docker", "Git", "GitHub", "Vercel", "Claude Code", "Postman", "Agile/Scrum"],
   ],
 
   experience: [
@@ -150,11 +158,10 @@ export const PORTFOLIO = {
       role: "Java Developer Intern",
       company: "FPT Software",
       location: "Đà Nẵng, Vietnam",
-      dates: "Jan 2025",
+      dates: "01/2025 – 05/2025",
       bullets: [
-        "Developed and maintained Java application modules in a real enterprise environment.",
-        "Debugged, tested, and optimized code on large-scale systems.",
-        "Collaborated with the team following a professional Agile/Scrum process.",
+        "Developed and maintained Java application modules using Spring Boot and SQL databases.",
+        "Collaborated within the engineering team following the Agile/Scrum process.",
       ],
     },
   ] satisfies ExperienceItem[],
@@ -164,7 +171,7 @@ export const PORTFOLIO = {
       degree: "Bachelor of Information Technology",
       school: "FPT University",
       location: "Đà Nẵng, Vietnam",
-      dates: "Expected graduation: Dec 2026",
+      dates: "Graduated: 10/2026",
     },
   ],
 
@@ -172,7 +179,13 @@ export const PORTFOLIO = {
   writing: [] as WritingItem[],
 
   // Add real certificates/events here — the section hides itself while empty.
-  events: [] as EventItem[],
+  events: [
+    {
+      date: "10/2026",
+      title: "Top 500 Finalist — AI Riser Vietnam 2026",
+      issuer: "Google for Developers",
+    },
+  ] satisfies EventItem[],
 
   outside: {
     blurb: "When I step away from the screen, I recharge through {{tags}}, which keeps my work fresh and my head clear.",
@@ -183,14 +196,14 @@ export const PORTFOLIO = {
 
   contact: {
     blurb:
-      "Final-year IT student open to internship and fresher full-stack web developer roles.",
+      "Looking for a frontend developer (with full-stack capability) who ships to production? I'm an IT graduate from FPT University based in Hà Nội — let's talk.",
     phone: "+84 862 544 627",
   },
 
   chat: {
     enabled: true,
     botName: "Tam",
-    greeting: "Hey! I'm Tam. Ask me about TMPMS, my stack, or anything else on this site.",
+    greeting: "Hey! I'm Tam. Ask me about TMPMS, Tracking Phượt, Việt Phục Các, or my tech stack.",
   },
 };
 
@@ -203,12 +216,15 @@ export const BRAND_COLORS: Record<string, string> = {
   "html/css": "#E34F26",
   "node.js": "#3C873A",
   java: "#f89820",
+  "spring boot": "#6DB33F",
   mysql: "#4479A1",
+  postgresql: "#4169E1",
   mongodb: "#47A248",
   git: "#F05032",
   github: "#ffffff",
   "rest api": "#0EA5E9",
   postman: "#FF6C37",
+  "claude code": "#D97706",
   "agile/scrum": "#22C55E",
   "tailwind css": "#38BDF8",
   supabase: "#3ECF8E",

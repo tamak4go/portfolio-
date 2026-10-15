@@ -36,40 +36,43 @@ function reply(msg: string): string {
   }
 
   if (m.includes("tmpms") || m.includes("pharmacy") || m.includes("đông y") || m.includes("dong y")) {
-    return `TMPMS is a production traditional-and-Western-medicine pharmacy platform, live at tmpms.io.vn: e-commerce, Đông Y diagnosis, appointment booking with deposits, real-time pharmacist chat over SignalR, a Gemini-AI chatbot, and PayOS payments with idempotent webhooks. Built solo on ASP.NET Core 8 / EF Core + SQL Server, React frontend, deployed with Docker. Full breakdown on the /projects/tmpms case study page.`;
+    return `TMPMS is a production traditional-and-Western-medicine pharmacy platform, live at tmpms.io.vn: e-commerce, Đông Y diagnosis, appointment booking with deposits, real-time pharmacist chat over SignalR, a Gemini-AI chatbot, and PayOS payments with idempotent webhooks. Built as my graduation project (team of 4, full-stack development) on ASP.NET Core 8 / EF Core + SQL Server and React frontend, deployed with Docker. Full breakdown on the /projects/tmpms case study page.`;
   }
   if (m.includes("tracking") || m.includes("phượt") || m.includes("phuot") || m.includes("gps") || m.includes("exif")) {
-    return `Tracking Phượt reconstructs a trip's route from the GPS data embedded in your photos' EXIF metadata, no manual tracking needed. It's grown into a full app with Google sign-in, a dashboard (map view, gallery, stats), an Explore feed of public rides, a Community page, and a Pro tier. Built with Next.js, TypeScript, Supabase, and MapLibre GL, live at trackingtours.vercel.app, and there's a case study at /projects/tracking-phuot.`;
+    return `Tracking Phượt achieved Top 500 in Google for Developers' AI Riser Vietnam 2026. It reconstructs dynamic trip routes from GPS data embedded in photos (including HEIC), features 3 video-export pipelines, and posts to TikTok via Content Posting API. Built with Next.js, TypeScript, Supabase, and MapLibre GL, live at trackingtours.vercel.app.`;
+  }
+  if (m.includes("việt phục") || m.includes("viet phuc") || m.includes("cổ phục") || m.includes("dressroom") || m.includes("thử đồ")) {
+    return `Việt Phục Các (live at dressroom-eight.vercel.app) is an interactive traditional Vietnamese costume fitting room (Cổ Phục triều Nguyễn) with paper doll multi-layer PNG stacking, 3D tilt depth (ThreeUI), royal palette garment dyeing, and HD lookbook export with royal seal stamping. Built with React, TypeScript, Vite, and Tailwind CSS.`;
   }
   if (m.includes("project") || m.includes("work") || m.includes("portfolio") || m.includes("dự án")) {
-    return `My two main builds: TMPMS, a production pharmacy platform (e-commerce, Đông Y diagnosis, appointment booking) built solo on ASP.NET Core + React, live at tmpms.io.vn; and Tracking Phượt, which reconstructs GPS routes from trip photos, live at trackingtours.vercel.app. Ask me about either one, or check the /projects page.`;
+    return `My main builds include: TMPMS (production Đông Y pharmacy platform on ASP.NET Core 8 + React), Tracking Phượt (Top 500 AI Riser Vietnam 2026, GPS route reconstruction & video export), and Việt Phục Các (interactive ancient attire fitting room). Check out the /projects page for details!`;
   }
 
   if (m.includes("react") || m.includes("next")) {
-    return `I build with React and Next.js for the frontend: this site and Tracking Phượt are both Next.js (App Router, TypeScript, Tailwind). TMPMS's frontend is React + Vite.`;
+    return `I build with React and Next.js for the frontend: this site and Tracking Phượt are both Next.js (App Router, TypeScript, Tailwind). TMPMS and Việt Phục Các use React + Vite.`;
   }
   if (m.includes("asp.net") || m.includes("aspnet") || m.includes(".net") || m.includes("c#")) {
     return `TMPMS's backend is ASP.NET Core 8 with EF Core on SQL Server: layered architecture, JWT + Identity auth, SignalR for real-time features, deployed with Docker.`;
   }
-  if (m.includes("java")) {
-    return `I used Java professionally during my internship at FPT Software (Đà Nẵng, Jan 2025), developing and maintaining application modules in a real enterprise environment.`;
+  if (m.includes("java") || m.includes("spring boot")) {
+    return `I used Java and Spring Boot during my internship at FPT Software (Đà Nẵng, Jan 2025 – May 2025), developing and maintaining application modules with SQL databases in an Agile/Scrum team.`;
   }
-  if (m.includes("database") || m.includes("sql") || m.includes("mongo") || m.includes("mysql")) {
-    return `TMPMS runs on SQL Server via EF Core, with Serializable transaction isolation to prevent booking conflicts. I've also worked with MySQL and MongoDB.`;
+  if (m.includes("database") || m.includes("sql") || m.includes("mongo") || m.includes("mysql") || m.includes("postgres")) {
+    return `I have experience with SQL Server, PostgreSQL, Supabase, MySQL, and MongoDB across various production and contest projects.`;
   }
   if (m.includes("stack") || m.includes("tech") || m.includes("language") || m.includes("use") || m.includes("skill")) {
-    return `Full-stack: React, Next.js, Vue.js, Node.js, Java, MySQL, MongoDB day-to-day, plus ASP.NET Core / EF Core / SQL Server from building TMPMS solo. Also comfortable with Git, REST APIs, and Agile/Scrum workflows.`;
+    return `Core stack: React, Next.js, TypeScript, JavaScript, Tailwind CSS for Frontend; ASP.NET Core 8, EF Core, Spring Boot (Java), Node.js for Backend; SQL Server, PostgreSQL, Supabase, MySQL for Databases; plus Docker, Git, Vercel, Claude Code, and Agile/Scrum.`;
   }
 
   if (m.includes("experience") || m.includes("internship") || m.includes("fpt software")) {
-    return `I interned as a Java Developer at FPT Software (Đà Nẵng, Jan 2025), where I developed and maintained Java modules in a real enterprise environment, debugged and optimized code on large-scale systems, and worked in a professional Agile/Scrum team. I'm now looking for my first full-stack role after I graduate in Dec 2026.`;
+    return `I interned as a Java Developer at FPT Software (Đà Nẵng, 01/2025 – 05/2025), where I developed and maintained Java modules using Spring Boot and SQL, working in a professional Agile/Scrum team.`;
   }
   if (m.includes("education") || m.includes("university") || m.includes("degree") || m.includes("study") || m.includes("học")) {
-    return `I'm a final-year Information Technology student at FPT University, Đà Nẵng, expected to graduate in Dec 2026.`;
+    return `I graduated in October 2026 with a Bachelor of Information Technology from FPT University Đà Nẵng.`;
   }
 
   if (m.includes("hire") || m.includes("job") || m.includes("available") || m.includes("opportunity")) {
-    return `Yes! I'm available for internships and fresher full-stack developer roles starting after graduation in Dec 2026. Reach out at ${PORTFOLIO.socials.email} or ${PORTFOLIO.contact.phone}.`;
+    return `Yes! I graduated in 10/2026 and am currently seeking a Frontend Developer role (with full-stack capability) in Hà Nội. Reach out at ${PORTFOLIO.socials.email} or ${PORTFOLIO.contact.phone}.`;
   }
   if (m.includes("contact") || m.includes("email") || m.includes("phone") || m.includes("reach")) {
     return `You can reach me at ${PORTFOLIO.socials.email} or ${PORTFOLIO.contact.phone}. My GitHub and LinkedIn are linked in the footer too.`;
@@ -81,7 +84,7 @@ function reply(msg: string): string {
     return PORTFOLIO.bio;
   }
 
-  return `I'm ${PORTFOLIO.chat.botName}, ${PORTFOLIO.name.split(" ").pop()}'s site assistant. Ask me about TMPMS, Tracking Phượt, my stack, my internship at FPT Software, or how to get in touch!`;
+  return `I'm ${PORTFOLIO.chat.botName}, ${PORTFOLIO.name.split(" ").pop()}'s site assistant. Ask me about TMPMS, Tracking Phượt, Việt Phục Các, my stack, or how to get in touch!`;
 }
 
 export function ChatWidget() {

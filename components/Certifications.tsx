@@ -2,6 +2,7 @@
 
 import { PORTFOLIO } from "@/lib/data";
 import { Reveal } from "./Reveal";
+import { StaggerGroup, StaggerItem } from "./StaggerGroup";
 import Link from "next/link";
 
 export function Certifications() {
@@ -17,18 +18,18 @@ export function Certifications() {
             View All &rsaquo;
           </Link>
         </div>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <StaggerGroup className="grid gap-3 sm:grid-cols-3">
           {events.slice(0, 3).map((ev, i) => (
-            <div
+            <StaggerItem
               key={i}
               className="rounded-xl border border-black/10 bg-white p-4 transition-colors hover:border-black/20 dark:border-white/10 dark:bg-surface dark:hover:border-white/20"
             >
               <p className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">{ev.date}</p>
               <h3 className="mt-1.5 font-semibold leading-snug">{ev.title}</h3>
               <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">{ev.issuer}</p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGroup>
       </Reveal>
     </section>
   );
