@@ -2,20 +2,17 @@
 **Dự án:** Portfolio & CV Cập nhật - Trịnh Quang Tâm  
 **Workspace:** `c:\Users\ngtam\Downloads\pof`  
 **Khởi tạo:** 2026-10-15  
-**Cập nhật lần cuối:** 2026-10-16 13:02  
+**Cập nhật lần cuối:** 2026-10-17 09:48  
 
 ---
 
 ## 1. Trạng Thái Hiện Tại (Current Status)
-- Đã cập nhật bổ sung liên kết Portfolio chính thức: `https://tamagok4.vercel.app/` vào toàn bộ các file CV nguồn LaTeX và biên dịch lại toàn bộ các bản PDF:
-  1. [`cv/main_example_vi.tex`](file:///c:/Users/ngtam/Downloads/pof/cv/main_example_vi.tex) -> [`cv/Trinh-Quang-Tam-CV-VI.pdf`](file:///c:/Users/ngtam/Downloads/pof/cv/Trinh-Quang-Tam-CV-VI.pdf) & [`public/Trinh-Quang-Tam-CV-VI.pdf`](file:///c:/Users/ngtam/Downloads/pof/public/Trinh-Quang-Tam-CV-VI.pdf).
-  2. [`cv/main_example.tex`](file:///c:/Users/ngtam/Downloads/pof/cv/main_example.tex) -> [`cv/Trinh-Quang-Tam-CV-EN.pdf`](file:///c:/Users/ngtam/Downloads/pof/cv/Trinh-Quang-Tam-CV-EN.pdf) & [`public/Trinh-Quang-Tam-CV-EN.pdf`](file:///c:/Users/ngtam/Downloads/pof/public/Trinh-Quang-Tam-CV-EN.pdf).
-  3. [`cv/cv_ai_thuc_chien_vinuni.tex`](file:///c:/Users/ngtam/Downloads/pof/cv/cv_ai_thuc_chien_vinuni.tex) -> [`cv/Trinh-Quang-Tam-CV-AI-Thuc-Chien-VinUni.pdf`](file:///c:/Users/ngtam/Downloads/pof/cv/Trinh-Quang-Tam-CV-AI-Thuc-Chien-VinUni.pdf) & [`public/Trinh-Quang-Tam-CV-AI-Thuc-Chien-VinUni.pdf`](file:///c:/Users/ngtam/Downloads/pof/public/Trinh-Quang-Tam-CV-AI-Thuc-Chien-VinUni.pdf).
-  4. [`cv/cv_ai_thuc_chien_vinuni_en.tex`](file:///c:/Users/ngtam/Downloads/pof/cv/cv_ai_thuc_chien_vinuni_en.tex) -> [`public/Trinh-Quang-Tam-CV-AI-Thuc-Chien-VinUni-EN.pdf`](file:///c:/Users/ngtam/Downloads/pof/public/Trinh-Quang-Tam-CV-AI-Thuc-Chien-VinUni-EN.pdf).
-- Đã xác thực trích xuất nội dung và link annotation trong file PDF qua `pypdf`:
-  - 100% các file PDF đều chuẩn xác đúng 1 trang A4 duy nhất, không tràn dòng.
-  - Link Portfolio `https://tamagok4.vercel.app/` được nhúng trực tiếp, nhấp vào hoạt động chính xác.
-- Đã chạy kiểm thử `npm run build`: Hoàn tất 100% thành công không lỗi (14/14 static pages prerendered).
+- Đã hoàn tất commit và **push thành công 100% lên remote GitHub**:
+  - **Remote Repository:** `https://github.com/tamak4go/portfolio-.git`
+  - **Branch:** `main`
+  - **Commit:** `b0da706` (`feat(cv): update CVs with portfolio link and add VinUni AI Thuc Chien application CVs`)
+- Toàn bộ các file CV nguồn LaTeX, các file PDF biên dịch chuẩn A4 (1 trang duy nhất, nhúng hyperlink Portfolio `https://tamagok4.vercel.app/`), chứng chỉ và tài liệu bổ trợ đã được đồng bộ lên remote.
+- Trạng thái git: `nothing to commit, working tree clean`.
 
 ---
 
@@ -43,14 +40,16 @@
 - Khôi phục chính xác 100% cấu trúc và nội dung gốc từ [`cv/main_example_vi.tex`](file:///c:/Users/ngtam/Downloads/pof/cv/main_example_vi.tex) và [`cv/main_example.tex`](file:///c:/Users/ngtam/Downloads/pof/cv/main_example.tex).
 
 ### [2026-10-16 13:02] - Bổ sung liên kết Portfolio vào toàn bộ CV
-- **Yêu cầu của User:** Cập nhật link portfolio `[Trịnh Quang Tâm - Frontend Developer](https://tamagok4.vercel.app/)` vào toàn bộ CV.
-- **Thực hiện:**
-  - Cập nhật trường `\extrainfo` với `\href{https://tamagok4.vercel.app/}{Portfolio}` trên tất cả 4 file LaTeX: `main_example_vi.tex`, `main_example.tex`, `cv_ai_thuc_chien_vinuni.tex`, `cv_ai_thuc_chien_vinuni_en.tex`.
-  - Biên dịch toàn bộ bằng `lualatex`, đồng bộ đầy đủ các file PDF ra cả thư mục `cv/` và thư mục `public/`.
-  - Kiểm tra link annotations trong PDF: xác nhận URI `https://tamagok4.vercel.app/` đã được nhúng và kích hoạt chuẩn xác.
-  - Chạy `npm run build`: Thành công 100%.
+- Cập nhật trường `\extrainfo` với `\href{https://tamagok4.vercel.app/}{Portfolio}` trên tất cả các file LaTeX.
+- Biên dịch toàn bộ bằng `lualatex`, đồng bộ đầy đủ các file PDF ra cả thư mục `cv/` và thư mục `public/`.
+- Kiểm tra link annotations trong PDF: xác nhận URI `https://tamagok4.vercel.app/` đã được nhúng và kích hoạt chuẩn xác.
+
+### [2026-10-17 09:48] - Commit & Push lên Remote GitHub
+- Stage toàn bộ các thay đổi và file tài liệu công việc.
+- Commit `b0da706`: `feat(cv): update CVs with portfolio link and add VinUni AI Thuc Chien application CVs`.
+- Push thành công lên `origin/main` (`https://github.com/tamak4go/portfolio-.git`).
 
 ---
 
 ## 3. Các Bước Tiếp Theo (Next Steps)
-- Người dùng có thể sử dụng các file PDF đã cập nhật link portfolio để ứng tuyển hoặc gửi nhà tuyển dụng.
+- Kho lưu trữ remote đã được đồng bộ hoàn toàn với local.
